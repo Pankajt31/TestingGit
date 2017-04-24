@@ -4,3 +4,4 @@
 /.secrets
 /.testproject
 /build.properties
+/.lockState
