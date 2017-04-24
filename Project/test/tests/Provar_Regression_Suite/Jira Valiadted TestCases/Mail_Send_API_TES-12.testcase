@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="13">
+  <summary/>
+  <steps>
+    <caseCall testCaseId="8ccb70d4-8ef0-47ac-8416-35a26f58e69d" testItemId="2"/>
+  </steps>
+</testCase>

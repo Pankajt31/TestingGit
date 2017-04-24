@@ -1,0 +1,2525 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase failureBehaviour="Continue" id="29">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: Bank_RetailDepartment (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">UAT_Console_App</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Reopen</value>
+        </argument>
+        <argument id="vfDebug"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="privateBrowsingMode"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="2" title="Create Object: Opportunity=&gt;OpportunityId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Opportunity</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">OpportunityId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="Name">
+          <value class="variable">
+            <path element="OpportunityName"/>
+          </value>
+        </argument>
+        <argument id="StageName">
+          <value class="value" valueClass="string">Prospecting</value>
+        </argument>
+        <argument id="CloseDate">
+          <value class="funcCall" id="DateAdd">
+            <argument id="date">
+              <value class="variable">
+                <path element="TODAY"/>
+              </value>
+            </argument>
+            <argument id="amount">
+              <value class="value" valueClass="decimal">30</value>
+            </argument>
+          </value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Bank_RetailDepartment</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Opportunity</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Name" name="Name" title="Name">
+          <summary>This is a test</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=StageName" name="StageName" title="StageName"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=CloseDate" name="CloseDate" title="CloseDate"/>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="4" title="Notes &amp; Attachments">
+      <tags/>
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Notes &amp; Attachments</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="673">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="674" title="Notes">
+              <tags/>
+              <arguments>
+                <argument id="description">
+                  <value class="value" valueClass="string">Notes</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="hidden" testItemId="719">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="737" title="Create Note">
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">Create Note</value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="hidden" testItemId="738">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="727" title="Note Variables">
+                              <arguments>
+                                <argument id="description">
+                                  <value class="value" valueClass="string">Note Variables</value>
+                                </argument>
+                              </arguments>
+                              <clauses>
+                                <clause name="hidden" testItemId="728">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="729" title="Set Values: Title">
+                                      <arguments>
+                                        <argument id="values">
+                                          <value class="valueList" mutable="Mutable">
+                                            <namedValues mutable="Mutable">
+                                              <namedValue name="valuePath">
+                                                <value class="value" valueClass="string">Title</value>
+                                              </namedValue>
+                                              <namedValue name="value">
+                                                <value class="value" valueClass="string">Note Title</value>
+                                              </namedValue>
+                                              <namedValue name="valueScope">
+                                                <value class="value" valueClass="string">Test</value>
+                                              </namedValue>
+                                            </namedValues>
+                                          </value>
+                                        </argument>
+                                      </arguments>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="730" title="Set Values: Body">
+                                      <arguments>
+                                        <argument id="values">
+                                          <value class="valueList" mutable="Mutable">
+                                            <namedValues mutable="Mutable">
+                                              <namedValue name="valuePath">
+                                                <value class="value" valueClass="string">Body</value>
+                                              </namedValue>
+                                              <namedValue name="value">
+                                                <value class="value" valueClass="string">Note Body</value>
+                                              </namedValue>
+                                              <namedValue name="valueScope">
+                                                <value class="value" valueClass="string">Test</value>
+                                              </namedValue>
+                                            </namedValues>
+                                          </value>
+                                        </argument>
+                                      </arguments>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="722" title="On SF Opportunity view screen">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                </argument>
+                                <argument id="target">
+                                  <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=View"/>
+                                </argument>
+                                <argument id="targetDescription">
+                                  <value class="value" valueClass="string">On SF Opportunity view screen</value>
+                                </argument>
+                                <argument id="navigate">
+                                  <value class="value" valueClass="string">IfNeccessary</value>
+                                </argument>
+                                <argument id="windowSelection">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="windowSize">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="closeWindow"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="sfUiTargetObjectId">
+                                  <value class="variable">
+                                    <path element="OpportunityId"/>
+                                  </value>
+                                </argument>
+                                <argument id="scTabType">
+                                  <value class="value" valueClass="string">NewTab</value>
+                                </argument>
+                                <argument id="scPrimaryTabName">
+                                  <value class="variable">
+                                    <path element="OpportunityName"/>
+                                  </value>
+                                </argument>
+                                <argument id="scSecondaryTabName"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="723">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="724" title="Click the Notes &amp; Attachments New Note button">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:locator?name=NewNote&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26action%3DNewNote%26relationship%3DCombinedAttachments"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Click the Notes &amp; Attachments New Note button</value>
+                                        </argument>
+                                        <argument id="wait"/>
+                                        <argument id="captureBefore"/>
+                                        <argument id="captureAfter"/>
+                                        <argument id="hover"/>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+                                  <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="target" name="scTabType" seq="1000" title="Tab Type">
+                                  <summary>The tab type for Scaffolds</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.plugins.sf.eclipse.ui:com.provar.plugins.forcedotcom.ui.valuesources.SfEnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.plugins.forcedotcom.core.ui.SfUiTargetUrl$ConsoleTabType</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="target" name="scPrimaryTabName" seq="1001" title="Primary Tab Name">
+                                  <summary>The main tab name</summary>
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="1491" title="On NewNotePage page">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                </argument>
+                                <argument id="target">
+                                  <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.NewNotePage"/>
+                                </argument>
+                                <argument id="navigate">
+                                  <value class="value" valueClass="string">Dont</value>
+                                </argument>
+                                <argument id="targetDescription">
+                                  <value class="value" valueClass="string">On NewNotePage page</value>
+                                </argument>
+                                <argument id="windowSelection">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="windowSize">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="closeWindow"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="uiTargetUrl"/>
+                                <argument id="scTabType">
+                                  <value class="value" valueClass="string">CurrentTab</value>
+                                </argument>
+                                <argument id="scPrimaryTabName"/>
+                                <argument id="scSecondaryTabName"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="1492">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1493" title="Set the Title to {Title}">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:pageobject:field?field=Title&amp;pageId=pageobjects.NewNotePage"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                        </argument>
+                                        <argument id="value">
+                                          <value class="variable">
+                                            <path element="Title"/>
+                                          </value>
+                                        </argument>
+                                        <argument id="blur">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="pressEnter">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Set the Title to {Title}</value>
+                                        </argument>
+                                        <argument id="wait"/>
+                                        <argument id="captureBefore"/>
+                                        <argument id="captureAfter"/>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="value" seq="10000" title="Value">
+                                          <summary>The value to be populated.</summary>
+                                          <type>
+                                            <textType>
+                                              <constraints>
+                                                <valueConstraint name="mimeType">text/plain</valueConstraint>
+                                              </constraints>
+                                            </textType>
+                                          </type>
+                                        </apiParam>
+                                        <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                          <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                        <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                          <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1494" title="Set the Body to {Body}">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:pageobject:field?field=Body&amp;pageId=pageobjects.NewNotePage"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                        </argument>
+                                        <argument id="value">
+                                          <value class="variable">
+                                            <path element="Body"/>
+                                          </value>
+                                        </argument>
+                                        <argument id="blur">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="pressEnter">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Set the Body to {Body}</value>
+                                        </argument>
+                                        <argument id="wait"/>
+                                        <argument id="captureBefore"/>
+                                        <argument id="captureAfter"/>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="value" title="Value">
+                                          <summary>The value to be populated.</summary>
+                                          <type>
+                                            <textType>
+                                              <constraints>
+                                                <valueConstraint name="mimeType">text/plain</valueConstraint>
+                                              </constraints>
+                                            </textType>
+                                          </type>
+                                        </apiParam>
+                                        <apiParam group="value" name="blur" title="Tab off field">
+                                          <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                        <apiParam group="value" name="pressEnter" title="Press Enter">
+                                          <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1495" title="Click the Save">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:pageobject:field?field=Save&amp;pageId=pageobjects.NewNotePage"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                        </argument>
+                                        <argument id="blur">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="pressEnter">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Click the Save</value>
+                                        </argument>
+                                        <argument id="wait"/>
+                                        <argument id="captureBefore"/>
+                                        <argument id="captureAfter"/>
+                                        <argument id="hover"/>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="pressEnter" title="Press Enter">
+                                          <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                        <apiParam group="value" name="hover" title="Hover before Clicking">
+                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="target" name="uiTargetUrl" title="Web Page">
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="target" name="scTabType" seq="1000" title="Tab Type">
+                                  <summary>The tab type for Scaffolds</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.plugins.sf.eclipse.ui:com.provar.plugins.forcedotcom.ui.valuesources.SfEnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.plugins.forcedotcom.core.ui.SfUiTargetUrl$ConsoleTabType</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="751" title="Read Record">
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">Read Record</value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="hidden" testItemId="752">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="753" title="On SF Opportunity view screen">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                </argument>
+                                <argument id="target">
+                                  <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=View"/>
+                                </argument>
+                                <argument id="targetDescription">
+                                  <value class="value" valueClass="string">On SF Opportunity view screen</value>
+                                </argument>
+                                <argument id="navigate">
+                                  <value class="value" valueClass="string">Dont</value>
+                                </argument>
+                                <argument id="windowSelection">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="windowSize">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="closeWindow"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="sfUiTargetObjectId">
+                                  <value class="variable">
+                                    <path element="OpportunityId"/>
+                                  </value>
+                                </argument>
+                                <argument id="scTabType">
+                                  <value class="value" valueClass="string">CurrentTab</value>
+                                </argument>
+                                <argument id="scPrimaryTabName"/>
+                                <argument id="scSecondaryTabName"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="754">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="755" title="With CombinedAttachments rows 1">
+                                      <arguments>
+                                        <argument id="uiConnectionName">
+                                          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                        </argument>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FCombinedAttachments%2FCombinedAttachmentsTable"/>
+                                        </argument>
+                                        <argument id="locatorDescription">
+                                          <value class="value" valueClass="string">With CombinedAttachments rows 1</value>
+                                        </argument>
+                                        <argument id="uiRowLocator">
+                                          <value class="value" valueClass="string">1</value>
+                                        </argument>
+                                        <argument id="failIfNotFound">
+                                          <value class="value" valueClass="boolean">true</value>
+                                        </argument>
+                                        <argument id="debugRowLocator"/>
+                                        <argument id="resultName">
+                                          <value class="value" valueClass="string">Row</value>
+                                        </argument>
+                                        <argument id="resultScope">
+                                          <value class="value" valueClass="string">Local</value>
+                                        </argument>
+                                        <argument id="autoPaginate"/>
+                                      </arguments>
+                                      <clauses>
+                                        <clause name="substeps" testItemId="756">
+                                          <steps>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiRead" name="UiRead" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.UiReadTestStepCommand" testItemId="1253" title="UI Read/Assert">
+                                              <arguments>
+                                                <argument id="resultName">
+                                                  <value class="value" valueClass="string">Values</value>
+                                                </argument>
+                                                <argument id="attributesResultName">
+                                                  <value class="value" valueClass="string">Attributes</value>
+                                                </argument>
+                                                <argument id="errorsResultName">
+                                                  <value class="value" valueClass="string">Errors</value>
+                                                </argument>
+                                                <argument id="resultScope">
+                                                  <value class="value" valueClass="string">Test</value>
+                                                </argument>
+                                              </arguments>
+                                              <resultAssertions>
+                                                <resultAssertion resultName="field__RecordType" title="Check RecordType value">
+                                                  <expected class="value" valueClass="string">Note</expected>
+                                                </resultAssertion>
+                                                <resultAssertion comparisonType="Contains" resultName="field__Title" title="Check Title value">
+                                                  <expected class="variable">
+                                                    <path element="Title"/>
+                                                  </expected>
+                                                </resultAssertion>
+                                              </resultAssertions>
+                                              <parameterGeneratorProperties>
+                                                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UiReadTestStepCommand.ConnectionName">Bank_RetailDepartment</propertyValue>
+                                                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UiReadTestStepCommand.CustomObjectName"/>
+                                              </parameterGeneratorProperties>
+                                              <generatedParameters>
+                                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=CombinedAttachment&amp;field=RecordType" name="field__RecordType" title="Type">
+                                                  <type>
+                                                    <linkType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=CombinedAttachment&amp;field=Title" name="field__Title" title="Title">
+                                                  <type>
+                                                    <linkType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                          </steps>
+                                        </clause>
+                                      </clauses>
+                                      <generatedParameters>
+                                        <apiParam group="options" name="autoPaginate" title="Auto Paginate">
+                                          <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+                                  <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="target" name="scTabType" seq="1000" title="Tab Type">
+                                  <summary>The tab type for Scaffolds</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.plugins.sf.eclipse.ui:com.provar.plugins.forcedotcom.ui.valuesources.SfEnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.plugins.forcedotcom.core.ui.SfUiTargetUrl$ConsoleTabType</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="758" title="Edit Record">
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">Edit Record</value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="hidden" testItemId="759">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="760" title="On SF Opportunity view screen">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                </argument>
+                                <argument id="target">
+                                  <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=View"/>
+                                </argument>
+                                <argument id="targetDescription">
+                                  <value class="value" valueClass="string">On SF Opportunity view screen</value>
+                                </argument>
+                                <argument id="navigate">
+                                  <value class="value" valueClass="string">Dont</value>
+                                </argument>
+                                <argument id="windowSelection">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="windowSize">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="closeWindow"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="sfUiTargetObjectId">
+                                  <value class="variable">
+                                    <path element="OpportunityId"/>
+                                  </value>
+                                </argument>
+                                <argument id="scTabType">
+                                  <value class="value" valueClass="string">CurrentTab</value>
+                                </argument>
+                                <argument id="scPrimaryTabName"/>
+                                <argument id="scSecondaryTabName"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="761">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="762" title="With CombinedAttachments rows 1">
+                                      <arguments>
+                                        <argument id="uiConnectionName">
+                                          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                        </argument>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FCombinedAttachments%2FCombinedAttachmentsTable"/>
+                                        </argument>
+                                        <argument id="locatorDescription">
+                                          <value class="value" valueClass="string">With CombinedAttachments rows 1</value>
+                                        </argument>
+                                        <argument id="uiRowLocator">
+                                          <value class="value" valueClass="string">1</value>
+                                        </argument>
+                                        <argument id="failIfNotFound">
+                                          <value class="value" valueClass="boolean">true</value>
+                                        </argument>
+                                        <argument id="debugRowLocator"/>
+                                        <argument id="resultName">
+                                          <value class="value" valueClass="string">Row</value>
+                                        </argument>
+                                        <argument id="resultScope">
+                                          <value class="value" valueClass="string">Local</value>
+                                        </argument>
+                                        <argument id="autoPaginate"/>
+                                      </arguments>
+                                      <clauses>
+                                        <clause name="substeps" testItemId="763">
+                                          <steps>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="675" title="Click the Notes &amp; Attachments Edit button">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=Edit&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26action%3DEdit%26relationship%3DCombinedAttachments&amp;rowLocator=1"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Click the Notes &amp; Attachments Edit button</value>
+                                                </argument>
+                                                <argument id="wait">
+                                                  <value class="uiWait" uri="ui:wait:timed?seconds=5"/>
+                                                </argument>
+                                                <argument id="captureBefore"/>
+                                                <argument id="captureAfter"/>
+                                                <argument id="hover"/>
+                                              </arguments>
+                                              <generatedParameters>
+                                                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                          </steps>
+                                        </clause>
+                                      </clauses>
+                                      <generatedParameters>
+                                        <apiParam group="options" name="autoPaginate" title="Auto Paginate">
+                                          <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+                                  <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="target" name="scTabType" seq="1000" title="Tab Type">
+                                  <summary>The tab type for Scaffolds</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.plugins.sf.eclipse.ui:com.provar.plugins.forcedotcom.ui.valuesources.SfEnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.plugins.forcedotcom.core.ui.SfUiTargetUrl$ConsoleTabType</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="1496" title="On NewNotePage page">
+                              <tags/>
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                </argument>
+                                <argument id="target">
+                                  <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.NewNotePage"/>
+                                </argument>
+                                <argument id="targetDescription">
+                                  <value class="value" valueClass="string">On NewNotePage page</value>
+                                </argument>
+                                <argument id="navigate">
+                                  <value class="value" valueClass="string">Dont</value>
+                                </argument>
+                                <argument id="windowSelection">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="windowSize">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="closeWindow"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="uiTargetUrl"/>
+                                <argument id="scTabType">
+                                  <value class="value" valueClass="string">CurrentTab</value>
+                                </argument>
+                                <argument id="scPrimaryTabName"/>
+                                <argument id="scSecondaryTabName"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="1497">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1498" title="Click the Cancel">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:pageobject:field?field=Cancel&amp;pageId=pageobjects.NewNotePage"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                        </argument>
+                                        <argument id="blur">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="pressEnter">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Click the Cancel</value>
+                                        </argument>
+                                        <argument id="wait"/>
+                                        <argument id="captureBefore"/>
+                                        <argument id="captureAfter"/>
+                                        <argument id="hover"/>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="pressEnter" title="Press Enter">
+                                          <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                        <apiParam group="value" name="hover" title="Hover before Clicking">
+                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="target" name="uiTargetUrl" title="Web Page">
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="target" name="scTabType" seq="1000" title="Tab Type">
+                                  <summary>The tab type for Scaffolds</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.plugins.sf.eclipse.ui:com.provar.plugins.forcedotcom.ui.valuesources.SfEnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.plugins.forcedotcom.core.ui.SfUiTargetUrl$ConsoleTabType</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="768" title="Delete Record">
+                      <tags/>
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">Delete Record</value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="hidden" testItemId="769">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="1466" title="On SF Opportunity view screen">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                </argument>
+                                <argument id="target">
+                                  <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=View"/>
+                                </argument>
+                                <argument id="navigate">
+                                  <value class="value" valueClass="string">Dont</value>
+                                </argument>
+                                <argument id="sfUiTargetObjectId">
+                                  <value class="variable">
+                                    <path element="OpportunityId"/>
+                                  </value>
+                                </argument>
+                                <argument id="targetDescription">
+                                  <value class="value" valueClass="string">On SF Opportunity view screen</value>
+                                </argument>
+                                <argument id="windowSelection">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="windowSize">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="closeWindow"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="scTabType">
+                                  <value class="value" valueClass="string">CurrentTab</value>
+                                </argument>
+                                <argument id="scPrimaryTabName"/>
+                                <argument id="scSecondaryTabName"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="1467">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="1468" title="With CombinedAttachments rows {1}">
+                                      <arguments>
+                                        <argument id="uiConnectionName">
+                                          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                        </argument>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FCombinedAttachments%2FCombinedAttachmentsTable"/>
+                                        </argument>
+                                        <argument id="uiRowLocator">
+                                          <value class="value" valueClass="decimal">1</value>
+                                        </argument>
+                                        <argument id="locatorDescription">
+                                          <value class="value" valueClass="string">With CombinedAttachments rows {1}</value>
+                                        </argument>
+                                        <argument id="failIfNotFound">
+                                          <value class="value" valueClass="boolean">true</value>
+                                        </argument>
+                                        <argument id="debugRowLocator"/>
+                                        <argument id="resultName">
+                                          <value class="value" valueClass="string">Row</value>
+                                        </argument>
+                                        <argument id="resultScope">
+                                          <value class="value" valueClass="string">Local</value>
+                                        </argument>
+                                        <argument id="autoPaginate"/>
+                                      </arguments>
+                                      <clauses>
+                                        <clause name="substeps" testItemId="1469">
+                                          <steps>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1470" title="Click and Cancel the Notes &amp; Attachments Del button">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=Delete&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26action%3DDelete%26relationship%3DCombinedAttachments"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=actionWithCancel"/>
+                                                </argument>
+                                                <argument id="hover">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureBefore">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Click and Cancel the Notes &amp; Attachments Del button</value>
+                                                </argument>
+                                                <argument id="wait"/>
+                                              </arguments>
+                                              <generatedParameters/>
+                                            </apiCall>
+                                          </steps>
+                                        </clause>
+                                      </clauses>
+                                      <generatedParameters>
+                                        <apiParam group="options" name="autoPaginate" title="Auto Paginate">
+                                          <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiRead" name="UiRead" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.UiReadTestStepCommand" testItemId="1478" title="UI Read/Assert">
+                                      <arguments>
+                                        <argument id="resultName">
+                                          <value class="value" valueClass="string">Values</value>
+                                        </argument>
+                                        <argument id="attributesResultName">
+                                          <value class="value" valueClass="string">Attributes</value>
+                                        </argument>
+                                        <argument id="errorsResultName">
+                                          <value class="value" valueClass="string">Errors</value>
+                                        </argument>
+                                        <argument id="resultScope">
+                                          <value class="value" valueClass="string">Test</value>
+                                        </argument>
+                                      </arguments>
+                                      <parameterGeneratorProperties>
+                                        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UiReadTestStepCommand.ConnectionName">Bank_RetailDepartment</propertyValue>
+                                        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UiReadTestStepCommand.CustomObjectName"/>
+                                      </parameterGeneratorProperties>
+                                      <generatedParameters>
+                                        <apiParam group="attributes" modelBinding="sf:ui:binding:object?object=Opportunity&amp;relationship=CombinedAttachments" name="attr__CombinedAttachments" title="Notes &amp; Attachments">
+                                          <type>
+                                            <textType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="1479" title="Assert: {Attributes.CombinedAttachments.displayRowCount} EqualTo 1">
+                                      <arguments>
+                                        <argument id="expectedValue">
+                                          <value class="variable">
+                                            <path element="Attributes"/>
+                                            <path element="CombinedAttachments"/>
+                                            <path element="displayRowCount"/>
+                                          </value>
+                                        </argument>
+                                        <argument id="actualValue">
+                                          <value class="value" valueClass="string">1</value>
+                                        </argument>
+                                        <argument id="comparisonType">
+                                          <value class="value" valueClass="string">EqualTo</value>
+                                        </argument>
+                                        <argument id="caseSensitive">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="retainDecimals">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="nullGreater">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="matchMultiLine">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="matchDotAll">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="failureMessage">
+                                          <value class="value" valueClass="string">Failure - Note is deleted</value>
+                                        </argument>
+                                        <argument id="numeric">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                      </arguments>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="1471" title="With CombinedAttachments rows {1}">
+                                      <arguments>
+                                        <argument id="uiConnectionName">
+                                          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                        </argument>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FCombinedAttachments%2FCombinedAttachmentsTable"/>
+                                        </argument>
+                                        <argument id="uiRowLocator">
+                                          <value class="value" valueClass="decimal">1</value>
+                                        </argument>
+                                        <argument id="locatorDescription">
+                                          <value class="value" valueClass="string">With CombinedAttachments rows {1}</value>
+                                        </argument>
+                                        <argument id="failIfNotFound">
+                                          <value class="value" valueClass="boolean">true</value>
+                                        </argument>
+                                        <argument id="debugRowLocator"/>
+                                        <argument id="resultName">
+                                          <value class="value" valueClass="string">Row</value>
+                                        </argument>
+                                        <argument id="resultScope">
+                                          <value class="value" valueClass="string">Local</value>
+                                        </argument>
+                                        <argument id="autoPaginate"/>
+                                      </arguments>
+                                      <clauses>
+                                        <clause name="substeps" testItemId="1472">
+                                          <steps>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1473" title="Click and Confirm the Notes &amp; Attachments Del button">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=Delete&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26action%3DDelete%26relationship%3DCombinedAttachments"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=actionWithOk"/>
+                                                </argument>
+                                                <argument id="hover">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureBefore">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="captureAfter">
+                                                  <value class="value" valueClass="boolean">false</value>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Click and Confirm the Notes &amp; Attachments Del button</value>
+                                                </argument>
+                                                <argument id="wait"/>
+                                                <argument id="value"/>
+                                              </arguments>
+                                              <generatedParameters>
+                                                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="value" title="Expected Message">
+                                                  <summary>The expected message.  The test will fail if this is populated and doesn't match the actual message.</summary>
+                                                  <type>
+                                                    <textType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                          </steps>
+                                        </clause>
+                                      </clauses>
+                                      <generatedParameters>
+                                        <apiParam group="options" name="autoPaginate" title="Auto Paginate">
+                                          <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiRead" name="UiRead" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.UiReadTestStepCommand" testItemId="1484" title="UI Read/Assert">
+                                      <arguments>
+                                        <argument id="resultName">
+                                          <value class="value" valueClass="string">Values</value>
+                                        </argument>
+                                        <argument id="attributesResultName">
+                                          <value class="value" valueClass="string">Attributes</value>
+                                        </argument>
+                                        <argument id="errorsResultName">
+                                          <value class="value" valueClass="string">Errors</value>
+                                        </argument>
+                                        <argument id="resultScope">
+                                          <value class="value" valueClass="string">Test</value>
+                                        </argument>
+                                      </arguments>
+                                      <parameterGeneratorProperties>
+                                        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UiReadTestStepCommand.ConnectionName">Bank_RetailDepartment</propertyValue>
+                                        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UiReadTestStepCommand.CustomObjectName"/>
+                                      </parameterGeneratorProperties>
+                                      <generatedParameters>
+                                        <apiParam group="attributes" modelBinding="sf:ui:binding:object?object=Account&amp;relationship=CombinedAttachments" name="attr__CombinedAttachments" title="Notes &amp; Attachments">
+                                          <type>
+                                            <textType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="1485" title="Assert: {Attributes.CombinedAttachments.displayRowCount} EqualTo 0">
+                                      <arguments>
+                                        <argument id="expectedValue">
+                                          <value class="variable">
+                                            <path element="Attributes"/>
+                                            <path element="CombinedAttachments"/>
+                                            <path element="displayRowCount"/>
+                                          </value>
+                                        </argument>
+                                        <argument id="actualValue">
+                                          <value class="value" valueClass="string">0</value>
+                                        </argument>
+                                        <argument id="comparisonType">
+                                          <value class="value" valueClass="string">EqualTo</value>
+                                        </argument>
+                                        <argument id="caseSensitive">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="retainDecimals">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="nullGreater">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="matchMultiLine">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="matchDotAll">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="failureMessage">
+                                          <value class="value" valueClass="string">Failure - Note is not deleted</value>
+                                        </argument>
+                                        <argument id="numeric">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                      </arguments>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+                                  <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="target" name="scTabType" seq="1000" title="Tab Type">
+                                  <summary>The tab type for Scaffolds</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.plugins.sf.eclipse.ui:com.provar.plugins.forcedotcom.ui.valuesources.SfEnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.plugins.forcedotcom.core.ui.SfUiTargetUrl$ConsoleTabType</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="1162" title="Attachments">
+              <tags/>
+              <arguments>
+                <argument id="description">
+                  <value class="value" valueClass="string">Attachments</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="hidden" testItemId="1163">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="1164" title="Add Attachments">
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">Add Attachments</value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="hidden" testItemId="1165">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="1166" title="On SF Opportunity view screen">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                </argument>
+                                <argument id="target">
+                                  <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=View"/>
+                                </argument>
+                                <argument id="targetDescription">
+                                  <value class="value" valueClass="string">On SF Opportunity view screen</value>
+                                </argument>
+                                <argument id="navigate">
+                                  <value class="value" valueClass="string">Dont</value>
+                                </argument>
+                                <argument id="windowSelection">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="windowSize">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="closeWindow"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="sfUiTargetObjectId">
+                                  <value class="variable">
+                                    <path element="OpportunityId"/>
+                                  </value>
+                                </argument>
+                                <argument id="scTabType">
+                                  <value class="value" valueClass="string">CurrentTab</value>
+                                </argument>
+                                <argument id="scPrimaryTabName"/>
+                                <argument id="scSecondaryTabName"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="1167">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1168" title="Click the Notes &amp; Attachments Attach File button">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:locator?name=AttachFile&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26action%3DAttachFile%26relationship%3DCombinedAttachments"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Click the Notes &amp; Attachments Attach File button</value>
+                                        </argument>
+                                        <argument id="wait"/>
+                                        <argument id="captureBefore"/>
+                                        <argument id="captureAfter"/>
+                                        <argument id="hover"/>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="hover" title="Hover before Clicking">
+                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+                                  <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="target" name="scTabType" seq="1000" title="Tab Type">
+                                  <summary>The tab type for Scaffolds</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.plugins.sf.eclipse.ui:com.provar.plugins.forcedotcom.ui.valuesources.SfEnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.plugins.forcedotcom.core.ui.SfUiTargetUrl$ConsoleTabType</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="1499" title="On SF Attach file screen">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                </argument>
+                                <argument id="target">
+                                  <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=attachFile"/>
+                                </argument>
+                                <argument id="navigate">
+                                  <value class="value" valueClass="string">Dont</value>
+                                </argument>
+                                <argument id="sfUiTargetObjectId">
+                                  <value class="variable">
+                                    <path element="OpportunityId"/>
+                                  </value>
+                                </argument>
+                                <argument id="targetDescription">
+                                  <value class="value" valueClass="string">On SF Attach file screen</value>
+                                </argument>
+                                <argument id="windowSelection">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="windowSize">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="closeWindow">
+                                  <value class="value" valueClass="boolean">true</value>
+                                </argument>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="scTabType">
+                                  <value class="value" valueClass="string">CurrentTab</value>
+                                </argument>
+                                <argument id="scPrimaryTabName"/>
+                                <argument id="scSecondaryTabName"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="1500">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1501" title="Choose File the Choose File button to templates/SGCertifiedDeveloper.pdf">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:locator?name=chooseFile&amp;rowLocator=1"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=file"/>
+                                        </argument>
+                                        <argument id="blur">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="pressEnter">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Choose File the Choose File button to templates/SGCertifiedDeveloper.pdf</value>
+                                        </argument>
+                                        <argument id="wait"/>
+                                        <argument id="captureBefore"/>
+                                        <argument id="captureAfter"/>
+                                        <argument id="value">
+                                          <value class="url">templates/SGCertifiedDeveloper.pdf</value>
+                                        </argument>
+                                        <argument id="fileLocation">
+                                          <value class="url">templates/SGCertifiedDeveloper.pdf</value>
+                                        </argument>
+                                        <argument id="fileContents"/>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="fileLocation" seq="10000" title="File Name/Location">
+                                          <summary>The file to be uploaded.</summary>
+                                          <type>
+                                            <urlType/>
+                                          </type>
+                                        </apiParam>
+                                        <apiParam group="value" name="fileContents" seq="10001" title="File Contents">
+                                          <summary>The data to be uploaded.</summary>
+                                          <type>
+                                            <textType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1502" title="Click the Attach File button">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:locator?name=attachFile&amp;rowLocator=1"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                        </argument>
+                                        <argument id="blur">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="pressEnter">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Click the Attach File button</value>
+                                        </argument>
+                                        <argument id="wait"/>
+                                        <argument id="captureBefore"/>
+                                        <argument id="captureAfter"/>
+                                        <argument id="hover"/>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="hover" title="Hover before Clicking">
+                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1503" title="Click the Done button">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:locator?name=done"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Click the Done button</value>
+                                        </argument>
+                                        <argument id="wait"/>
+                                        <argument id="captureBefore"/>
+                                        <argument id="captureAfter"/>
+                                        <argument id="hover"/>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="hover" title="Hover before Clicking">
+                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+                                  <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="target" name="scTabType" seq="1000" title="Tab Type">
+                                  <summary>The tab type for Scaffolds</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.plugins.sf.eclipse.ui:com.provar.plugins.forcedotcom.ui.valuesources.SfEnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.plugins.forcedotcom.core.ui.SfUiTargetUrl$ConsoleTabType</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="1174" title="Read Attachments">
+                      <tags/>
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">Read Attachments</value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="hidden" testItemId="1175">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="1176" title="On SF Opportunity view screen">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                </argument>
+                                <argument id="target">
+                                  <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=View"/>
+                                </argument>
+                                <argument id="navigate">
+                                  <value class="value" valueClass="string">Dont</value>
+                                </argument>
+                                <argument id="sfUiTargetObjectId">
+                                  <value class="variable">
+                                    <path element="OpportunityId"/>
+                                  </value>
+                                </argument>
+                                <argument id="targetDescription">
+                                  <value class="value" valueClass="string">On SF Opportunity view screen</value>
+                                </argument>
+                                <argument id="windowSelection">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="windowSize">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="closeWindow"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="scTabType">
+                                  <value class="value" valueClass="string">NewTab</value>
+                                </argument>
+                                <argument id="scPrimaryTabName">
+                                  <value class="variable">
+                                    <path element="OpportunityName"/>
+                                  </value>
+                                </argument>
+                                <argument id="scSecondaryTabName"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="1177">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="1178" title="With CombinedAttachments rows {1}">
+                                      <arguments>
+                                        <argument id="uiConnectionName">
+                                          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                        </argument>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FCombinedAttachments%2FCombinedAttachmentsTable"/>
+                                        </argument>
+                                        <argument id="uiRowLocator">
+                                          <value class="value" valueClass="decimal">1</value>
+                                        </argument>
+                                        <argument id="locatorDescription">
+                                          <value class="value" valueClass="string">With CombinedAttachments rows {1}</value>
+                                        </argument>
+                                        <argument id="failIfNotFound">
+                                          <value class="value" valueClass="boolean">true</value>
+                                        </argument>
+                                        <argument id="debugRowLocator"/>
+                                        <argument id="resultName">
+                                          <value class="value" valueClass="string">Row</value>
+                                        </argument>
+                                        <argument id="resultScope">
+                                          <value class="value" valueClass="string">Local</value>
+                                        </argument>
+                                        <argument id="autoPaginate"/>
+                                      </arguments>
+                                      <clauses>
+                                        <clause name="substeps" testItemId="1179">
+                                          <steps>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiRead" name="UiRead" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.UiReadTestStepCommand" testItemId="975" title="UI Read/Assert">
+                                              <arguments>
+                                                <argument id="resultName">
+                                                  <value class="value" valueClass="string">Values</value>
+                                                </argument>
+                                                <argument id="attributesResultName">
+                                                  <value class="value" valueClass="string">Attributes</value>
+                                                </argument>
+                                                <argument id="errorsResultName">
+                                                  <value class="value" valueClass="string">Errors</value>
+                                                </argument>
+                                                <argument id="resultScope">
+                                                  <value class="value" valueClass="string">Test</value>
+                                                </argument>
+                                              </arguments>
+                                              <resultAssertions>
+                                                <resultAssertion resultName="field__RecordType" title="Check RecordType value">
+                                                  <expected class="value" valueClass="string">Attachment</expected>
+                                                </resultAssertion>
+                                                <resultAssertion comparisonType="IsPresent" resultName="field__Title" title="Check Title value"/>
+                                                <resultAssertion comparisonType="IsPresent" resultName="field__LastModifiedDate" title="Check LastModifiedDate value"/>
+                                              </resultAssertions>
+                                              <parameterValueSources/>
+                                              <parameterGeneratorProperties>
+                                                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UiReadTestStepCommand.ConnectionName">Bank_RetailDepartment</propertyValue>
+                                                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UiReadTestStepCommand.CustomObjectName"/>
+                                              </parameterGeneratorProperties>
+                                              <generatedParameters>
+                                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=CombinedAttachment&amp;field=RecordType" name="field__RecordType" title="Type">
+                                                  <type>
+                                                    <linkType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=CombinedAttachment&amp;field=Title" name="field__Title" title="Title">
+                                                  <type>
+                                                    <linkType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=CombinedAttachment&amp;field=LastModifiedDate" name="field__LastModifiedDate" title="Last Modified">
+                                                  <type>
+                                                    <linkType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1257" title="Download the Notes &amp; Attachments View button">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=View&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26action%3DView%26relationship%3DCombinedAttachments"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=download"/>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Download the Notes &amp; Attachments View button</value>
+                                                </argument>
+                                                <argument id="wait"/>
+                                                <argument id="captureBefore"/>
+                                                <argument id="captureAfter"/>
+                                                <argument id="resultName">
+                                                  <value class="value" valueClass="string">contents</value>
+                                                </argument>
+                                                <argument id="resultScope">
+                                                  <value class="value" valueClass="string">Test</value>
+                                                </argument>
+                                                <argument id="resultFormat">
+                                                  <value class="value" valueClass="string">Parsed</value>
+                                                </argument>
+                                                <argument id="hover"/>
+                                                <argument id="parseableContentType"/>
+                                              </arguments>
+                                              <generatedParameters>
+                                                <apiParam group="value" name="resultName" resultNameParameter="true" seq="10001" title="Result Name">
+                                                  <summary>The name that the result will be stored under.</summary>
+                                                  <defaultValue>contents</defaultValue>
+                                                  <type>
+                                                    <textType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="resultScope" resultScopeParameter="true" seq="10002" title="Result Scope">
+                                                  <summary>The lifespan of the result.</summary>
+                                                  <defaultValue>Test</defaultValue>
+                                                  <type>
+                                                    <choiceType>
+                                                      <constraints>
+                                                        <valueConstraint name="boundedValues">Global:Test Run|Folder:Test Folder|Test:Test Case|GroupStep:Group Step|Local:Test Step</valueConstraint>
+                                                      </constraints>
+                                                    </choiceType>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="resultFormat" seq="10003" title="Result Format">
+                                                  <summary>The format of the result.</summary>
+                                                  <defaultValue>Text</defaultValue>
+                                                  <type>
+                                                    <choiceType>
+                                                      <constraints>
+                                                        <valueConstraint name="boundedValues">Text:Text|Parsed:Parsed|Raw:Raw</valueConstraint>
+                                                      </constraints>
+                                                    </choiceType>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="parseableContentType" seq="10000" title="Content Type">
+                                                  <summary>The content type of the file.</summary>
+                                                  <type>
+                                                    <choiceType>
+                                                      <constraints>
+                                                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.base.api.ParseableContentType</valueConstraint>
+                                                      </constraints>
+                                                    </choiceType>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                          </steps>
+                                        </clause>
+                                      </clauses>
+                                      <generatedParameters>
+                                        <apiParam group="options" name="autoPaginate" title="Auto Paginate">
+                                          <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+                                  <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="target" name="scTabType" seq="1000" title="Tab Type">
+                                  <summary>The tab type for Scaffolds</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.plugins.sf.eclipse.ui:com.provar.plugins.forcedotcom.ui.valuesources.SfEnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.plugins.forcedotcom.core.ui.SfUiTargetUrl$ConsoleTabType</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="target" name="scPrimaryTabName" seq="1001" title="Primary Tab Name">
+                                  <summary>The main tab name</summary>
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="978" title="Edit Attachment">
+                      <tags/>
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">Edit Attachment</value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="hidden" testItemId="979">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="986" title="On SF Opportunity view screen">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                </argument>
+                                <argument id="target">
+                                  <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=View"/>
+                                </argument>
+                                <argument id="targetDescription">
+                                  <value class="value" valueClass="string">On SF Opportunity view screen</value>
+                                </argument>
+                                <argument id="navigate">
+                                  <value class="value" valueClass="string">Dont</value>
+                                </argument>
+                                <argument id="windowSelection">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="windowSize">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="closeWindow"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="sfUiTargetObjectId">
+                                  <value class="variable">
+                                    <path element="OpportunityId"/>
+                                  </value>
+                                </argument>
+                                <argument id="scTabType">
+                                  <value class="value" valueClass="string">CurrentTab</value>
+                                </argument>
+                                <argument id="scPrimaryTabName"/>
+                                <argument id="scSecondaryTabName"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="987">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="988" title="With CombinedAttachments rows 1">
+                                      <arguments>
+                                        <argument id="uiConnectionName">
+                                          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                        </argument>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FCombinedAttachments%2FCombinedAttachmentsTable"/>
+                                        </argument>
+                                        <argument id="locatorDescription">
+                                          <value class="value" valueClass="string">With CombinedAttachments rows 1</value>
+                                        </argument>
+                                        <argument id="uiRowLocator">
+                                          <value class="value" valueClass="string">1</value>
+                                        </argument>
+                                        <argument id="failIfNotFound">
+                                          <value class="value" valueClass="boolean">true</value>
+                                        </argument>
+                                        <argument id="debugRowLocator"/>
+                                        <argument id="resultName">
+                                          <value class="value" valueClass="string">Row</value>
+                                        </argument>
+                                        <argument id="resultScope">
+                                          <value class="value" valueClass="string">Local</value>
+                                        </argument>
+                                        <argument id="autoPaginate"/>
+                                      </arguments>
+                                      <clauses>
+                                        <clause name="substeps" testItemId="989">
+                                          <steps>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="990" title="Click the Notes &amp; Attachments Edit button">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=Edit&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26action%3DEdit%26relationship%3DCombinedAttachments"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Click the Notes &amp; Attachments Edit button</value>
+                                                </argument>
+                                                <argument id="wait"/>
+                                                <argument id="captureBefore"/>
+                                                <argument id="captureAfter"/>
+                                                <argument id="hover"/>
+                                              </arguments>
+                                              <generatedParameters>
+                                                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                          </steps>
+                                        </clause>
+                                      </clauses>
+                                      <generatedParameters>
+                                        <apiParam group="options" name="autoPaginate" title="Auto Paginate">
+                                          <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+                                  <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="target" name="scTabType" seq="1000" title="Tab Type">
+                                  <summary>The tab type for Scaffolds</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.plugins.sf.eclipse.ui:com.provar.plugins.forcedotcom.ui.valuesources.SfEnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.plugins.forcedotcom.core.ui.SfUiTargetUrl$ConsoleTabType</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="1507" title="On EditAttachmentPage page">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                </argument>
+                                <argument id="target">
+                                  <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.EditAttachmentPage"/>
+                                </argument>
+                                <argument id="navigate">
+                                  <value class="value" valueClass="string">Dont</value>
+                                </argument>
+                                <argument id="targetDescription">
+                                  <value class="value" valueClass="string">On EditAttachmentPage page</value>
+                                </argument>
+                                <argument id="windowSelection">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="windowSize">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="closeWindow">
+                                  <value class="value" valueClass="boolean">true</value>
+                                </argument>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="uiTargetUrl"/>
+                                <argument id="scTabType">
+                                  <value class="value" valueClass="string">CurrentTab</value>
+                                </argument>
+                                <argument id="scPrimaryTabName"/>
+                                <argument id="scSecondaryTabName"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="1508">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1509" title="Click the Cancel">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:pageobject:field?field=Cancel&amp;pageId=pageobjects.EditAttachmentPage"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                        </argument>
+                                        <argument id="blur">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="pressEnter">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Click the Cancel</value>
+                                        </argument>
+                                        <argument id="wait"/>
+                                        <argument id="captureBefore"/>
+                                        <argument id="captureAfter"/>
+                                        <argument id="hover"/>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="target" name="uiTargetUrl" title="Web Page">
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="target" name="scTabType" seq="1000" title="Tab Type">
+                                  <summary>The tab type for Scaffolds</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.plugins.sf.eclipse.ui:com.provar.plugins.forcedotcom.ui.valuesources.SfEnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.plugins.forcedotcom.core.ui.SfUiTargetUrl$ConsoleTabType</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="1233" title="ViewAll">
+              <tags/>
+              <arguments>
+                <argument id="description">
+                  <value class="value" valueClass="string">ViewAll</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="hidden" testItemId="1234">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="1231" title="On SF Opportunity view screen">
+                      <arguments>
+                        <argument id="uiConnectionName">
+                          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                        </argument>
+                        <argument id="target">
+                          <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=View"/>
+                        </argument>
+                        <argument id="navigate">
+                          <value class="value" valueClass="string">Dont</value>
+                        </argument>
+                        <argument id="sfUiTargetObjectId">
+                          <value class="variable">
+                            <path element="OpportunityId"/>
+                          </value>
+                        </argument>
+                        <argument id="targetDescription">
+                          <value class="value" valueClass="string">On SF Opportunity view screen</value>
+                        </argument>
+                        <argument id="windowSelection">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="windowSize">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="closeWindow"/>
+                        <argument id="captureBefore"/>
+                        <argument id="captureAfter"/>
+                        <argument id="scTabType">
+                          <value class="value" valueClass="string">CurrentTab</value>
+                        </argument>
+                        <argument id="scPrimaryTabName"/>
+                        <argument id="scSecondaryTabName"/>
+                      </arguments>
+                      <clauses>
+                        <clause name="substeps" testItemId="1235">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1236" title="Click the Notes &amp; Attachments View All button">
+                              <tags/>
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=viewAll&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26action%3DviewAll%26relationship%3DCombinedAttachments"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                </argument>
+                                <argument id="pressEnter">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Click the Notes &amp; Attachments View All button</value>
+                                </argument>
+                                <argument id="wait"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="hover"/>
+                                <argument id="resultName">
+                                  <value class="value" valueClass="string">contents</value>
+                                </argument>
+                                <argument id="resultScope">
+                                  <value class="value" valueClass="string">Test</value>
+                                </argument>
+                                <argument id="resultFormat">
+                                  <value class="value" valueClass="string">Parsed</value>
+                                </argument>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="1237" title="On ViewAll page">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                </argument>
+                                <argument id="target">
+                                  <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.ViewAll"/>
+                                </argument>
+                                <argument id="navigate">
+                                  <value class="value" valueClass="string">Dont</value>
+                                </argument>
+                                <argument id="targetDescription">
+                                  <value class="value" valueClass="string">On ViewAll page</value>
+                                </argument>
+                                <argument id="windowSelection">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="windowSize">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="closeWindow"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="uiTargetUrl"/>
+                                <argument id="scTabType">
+                                  <value class="value" valueClass="string">CurrentTab</value>
+                                </argument>
+                                <argument id="scPrimaryTabName"/>
+                                <argument id="scSecondaryTabName"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="1238">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" name="UiAssert" testItemId="1239" title="UI Assert">
+                                      <arguments>
+                                        <argument id="resultName">
+                                          <value class="value" valueClass="string">NotesAttchment_ViewAll_Values</value>
+                                        </argument>
+                                        <argument id="resultScope">
+                                          <value class="value" valueClass="string">Test</value>
+                                        </argument>
+                                        <argument id="fieldAssertions">
+                                          <value class="valueList" mutable="Mutable">
+                                            <uiFieldAssertion resultName="ViewAll">
+                                              <fieldLocator uri="ui:pageobject:field?field=ViewAll&amp;pageId=pageobjects.ViewAll"/>
+                                              <attributeAssertions>
+                                                <uiAttributeAssertion attributeName="value" caseInsensitive="true" comparisonType="Contains">
+                                                  <value class="value" valueClass="string">View All</value>
+                                                </uiAttributeAssertion>
+                                                <uiAttributeAssertion attributeName="message" comparisonType="None"/>
+                                              </attributeAssertions>
+                                            </uiFieldAssertion>
+                                          </value>
+                                        </argument>
+                                        <argument id="pageAssertions">
+                                          <value class="valueList" mutable="Mutable">
+                                            <uiPageAssertion>
+                                              <attributeAssertions>
+                                                <uiAttributeAssertion attributeName="pageMessages" comparisonType="None" listOperator="Contains"/>
+                                              </attributeAssertions>
+                                            </uiPageAssertion>
+                                          </value>
+                                        </argument>
+                                        <argument id="captureAfter"/>
+                                        <argument id="columnAssertions">
+                                          <value class="valueList" mutable="Mutable"/>
+                                        </argument>
+                                      </arguments>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1240" title="Click the Cancel">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:pageobject:field?field=cancel&amp;pageId=pageobjects.ViewAll"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                        </argument>
+                                        <argument id="blur">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="pressEnter">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Click the Cancel</value>
+                                        </argument>
+                                        <argument id="wait"/>
+                                        <argument id="captureBefore"/>
+                                        <argument id="captureAfter"/>
+                                        <argument id="hover"/>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="hover" title="Hover before Clicking">
+                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="target" name="uiTargetUrl" title="Web Page">
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="target" name="scTabType" seq="1000" title="Tab Type">
+                                  <summary>The tab type for Scaffolds</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="valuesSource">com.provar.plugins.sf.eclipse.ui:com.provar.plugins.forcedotcom.ui.valuesources.SfEnumChoiceListValuesSource</valueConstraint>
+                                        <valueConstraint name="valuesSourceDependencies">com.provar.plugins.forcedotcom.core.ui.SfUiTargetUrl$ConsoleTabType</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                      <generatedParameters>
+                        <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+                          <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+                          <type>
+                            <textType/>
+                          </type>
+                        </apiParam>
+                        <apiParam group="target" name="scTabType" seq="1000" title="Tab Type">
+                          <summary>The tab type for Scaffolds</summary>
+                          <type>
+                            <choiceType>
+                              <constraints>
+                                <valueConstraint name="valuesSource">com.provar.plugins.sf.eclipse.ui:com.provar.plugins.forcedotcom.ui.valuesources.SfEnumChoiceListValuesSource</valueConstraint>
+                                <valueConstraint name="valuesSourceDependencies">com.provar.plugins.forcedotcom.core.ui.SfUiTargetUrl$ConsoleTabType</valueConstraint>
+                              </constraints>
+                            </choiceType>
+                          </type>
+                        </apiParam>
+                      </generatedParameters>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="1241" title="Delete Attachment">
+              <tags/>
+              <arguments>
+                <argument id="description">
+                  <value class="value" valueClass="string">Delete Attachment</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="hidden" testItemId="985">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="997" title="On SF Opportunity view screen">
+                      <arguments>
+                        <argument id="uiConnectionName">
+                          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                        </argument>
+                        <argument id="target">
+                          <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=View"/>
+                        </argument>
+                        <argument id="targetDescription">
+                          <value class="value" valueClass="string">On SF Opportunity view screen</value>
+                        </argument>
+                        <argument id="navigate">
+                          <value class="value" valueClass="string">IfNeccessary</value>
+                        </argument>
+                        <argument id="windowSelection">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="windowSize">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="closeWindow"/>
+                        <argument id="captureBefore"/>
+                        <argument id="captureAfter"/>
+                        <argument id="sfUiTargetObjectId">
+                          <value class="variable">
+                            <path element="OpportunityId"/>
+                          </value>
+                        </argument>
+                        <argument id="scTabType">
+                          <value class="value" valueClass="string">CurrentTab</value>
+                        </argument>
+                        <argument id="scPrimaryTabName"/>
+                        <argument id="scSecondaryTabName"/>
+                      </arguments>
+                      <clauses>
+                        <clause name="substeps" testItemId="998">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="999" title="With CombinedAttachments rows 1">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                </argument>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FCombinedAttachments%2FCombinedAttachmentsTable"/>
+                                </argument>
+                                <argument id="locatorDescription">
+                                  <value class="value" valueClass="string">With CombinedAttachments rows 1</value>
+                                </argument>
+                                <argument id="uiRowLocator">
+                                  <value class="value" valueClass="string">1</value>
+                                </argument>
+                                <argument id="failIfNotFound">
+                                  <value class="value" valueClass="boolean">true</value>
+                                </argument>
+                                <argument id="debugRowLocator"/>
+                                <argument id="resultName">
+                                  <value class="value" valueClass="string">Row</value>
+                                </argument>
+                                <argument id="resultScope">
+                                  <value class="value" valueClass="string">Local</value>
+                                </argument>
+                                <argument id="autoPaginate"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="1000">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1001" title="Click and Cancel the Notes &amp; Attachments Del button">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:locator?name=Delete&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26action%3DDelete%26relationship%3DCombinedAttachments"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=actionWithCancel"/>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Click and Cancel the Notes &amp; Attachments Del button</value>
+                                        </argument>
+                                        <argument id="wait"/>
+                                        <argument id="captureBefore"/>
+                                        <argument id="captureAfter"/>
+                                      </arguments>
+                                      <generatedParameters/>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="options" name="autoPaginate" title="Auto Paginate">
+                                  <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiRead" name="UiRead" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.UiReadTestStepCommand" testItemId="1002" title="UI Read/Assert">
+                              <arguments>
+                                <argument id="resultName">
+                                  <value class="value" valueClass="string">DeleteBefore_Values</value>
+                                </argument>
+                                <argument id="attributesResultName">
+                                  <value class="value" valueClass="string">DeleteBefore_Attributes</value>
+                                </argument>
+                                <argument id="errorsResultName">
+                                  <value class="value" valueClass="string">DeleteBefore_Errors</value>
+                                </argument>
+                                <argument id="resultScope">
+                                  <value class="value" valueClass="string">Test</value>
+                                </argument>
+                              </arguments>
+                              <parameterGeneratorProperties>
+                                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UiReadTestStepCommand.ConnectionName">Bank_RetailDepartment</propertyValue>
+                                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UiReadTestStepCommand.CustomObjectName"/>
+                              </parameterGeneratorProperties>
+                              <generatedParameters>
+                                <apiParam group="attributes" modelBinding="sf:ui:binding:object?object=Opportunity&amp;relationship=CombinedAttachments" name="attr__CombinedAttachments" title="Notes &amp; Attachments">
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="1003" title="Assert: {DeleteBefore_Attributes.CombinedAttachments.displayRowCount} EqualTo 1">
+                              <arguments>
+                                <argument id="expectedValue">
+                                  <value class="variable">
+                                    <path element="DeleteBefore_Attributes"/>
+                                    <path element="CombinedAttachments"/>
+                                    <path element="displayRowCount"/>
+                                  </value>
+                                </argument>
+                                <argument id="actualValue">
+                                  <value class="value" valueClass="string">1</value>
+                                </argument>
+                                <argument id="comparisonType">
+                                  <value class="value" valueClass="string">EqualTo</value>
+                                </argument>
+                                <argument id="caseSensitive">
+                                  <value class="value" valueClass="boolean">true</value>
+                                </argument>
+                                <argument id="retainDecimals">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="nullGreater">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="matchMultiLine">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="matchDotAll">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="failureMessage">
+                                  <value class="value" valueClass="string">Failure - Record is deleted</value>
+                                </argument>
+                                <argument id="numeric">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                              </arguments>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="1004" title="With CombinedAttachments rows 1">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                </argument>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FCombinedAttachments%2FCombinedAttachmentsTable"/>
+                                </argument>
+                                <argument id="locatorDescription">
+                                  <value class="value" valueClass="string">With CombinedAttachments rows 1</value>
+                                </argument>
+                                <argument id="uiRowLocator">
+                                  <value class="value" valueClass="string">1</value>
+                                </argument>
+                                <argument id="failIfNotFound">
+                                  <value class="value" valueClass="boolean">true</value>
+                                </argument>
+                                <argument id="debugRowLocator"/>
+                                <argument id="resultName">
+                                  <value class="value" valueClass="string">Row</value>
+                                </argument>
+                                <argument id="resultScope">
+                                  <value class="value" valueClass="string">Local</value>
+                                </argument>
+                                <argument id="autoPaginate"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="1005">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="1006" title="Click and Confirm the Notes &amp; Attachments Del button">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:locator?name=Delete&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26action%3DDelete%26relationship%3DCombinedAttachments"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=actionWithOk"/>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Click and Confirm the Notes &amp; Attachments Del button</value>
+                                        </argument>
+                                        <argument id="wait"/>
+                                        <argument id="captureBefore"/>
+                                        <argument id="captureAfter"/>
+                                        <argument id="value"/>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="value" seq="10000" title="Expected Message">
+                                          <summary>The expected message.  The test will fail if this is populated and doesn't match the actual message.</summary>
+                                          <type>
+                                            <textType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="options" name="autoPaginate" title="Auto Paginate">
+                                  <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiRead" name="UiRead" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.UiReadTestStepCommand" testItemId="1007" title="UI Read/Assert">
+                              <arguments>
+                                <argument id="resultName">
+                                  <value class="value" valueClass="string">DeleteAfter_Values</value>
+                                </argument>
+                                <argument id="attributesResultName">
+                                  <value class="value" valueClass="string">DeleteAfter_Attributes</value>
+                                </argument>
+                                <argument id="errorsResultName">
+                                  <value class="value" valueClass="string">DeleteAfter_Errors</value>
+                                </argument>
+                                <argument id="resultScope">
+                                  <value class="value" valueClass="string">Test</value>
+                                </argument>
+                              </arguments>
+                              <parameterGeneratorProperties>
+                                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UiReadTestStepCommand.ConnectionName">Bank_RetailDepartment</propertyValue>
+                                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UiReadTestStepCommand.CustomObjectName"/>
+                              </parameterGeneratorProperties>
+                              <generatedParameters>
+                                <apiParam group="attributes" modelBinding="sf:ui:binding:object?object=Opportunity&amp;relationship=CombinedAttachments" name="attr__CombinedAttachments" title="Notes &amp; Attachments">
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="1008" title="Assert: {DeleteAfter_Attributes.CombinedAttachments.displayRowCount} EqualTo 0">
+                              <arguments>
+                                <argument id="expectedValue">
+                                  <value class="variable">
+                                    <path element="DeleteAfter_Attributes"/>
+                                    <path element="CombinedAttachments"/>
+                                    <path element="displayRowCount"/>
+                                  </value>
+                                </argument>
+                                <argument id="actualValue">
+                                  <value class="value" valueClass="string">0</value>
+                                </argument>
+                                <argument id="comparisonType">
+                                  <value class="value" valueClass="string">EqualTo</value>
+                                </argument>
+                                <argument id="caseSensitive">
+                                  <value class="value" valueClass="boolean">true</value>
+                                </argument>
+                                <argument id="retainDecimals">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="nullGreater">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="matchMultiLine">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="matchDotAll">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="failureMessage">
+                                  <value class="value" valueClass="string">Failure - Record is not deleted</value>
+                                </argument>
+                              </arguments>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                      <generatedParameters>
+                        <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+                          <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+                          <type>
+                            <textType/>
+                          </type>
+                        </apiParam>
+                        <apiParam group="target" name="scTabType" seq="1000" title="Tab Type">
+                          <summary>The tab type for Scaffolds</summary>
+                          <type>
+                            <choiceType>
+                              <constraints>
+                                <valueConstraint name="valuesSource">com.provar.plugins.sf.eclipse.ui:com.provar.plugins.forcedotcom.ui.valuesources.SfEnumChoiceListValuesSource</valueConstraint>
+                                <valueConstraint name="valuesSourceDependencies">com.provar.plugins.forcedotcom.core.ui.SfUiTargetUrl$ConsoleTabType</valueConstraint>
+                              </constraints>
+                            </choiceType>
+                          </type>
+                        </apiParam>
+                      </generatedParameters>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexDeleteObject" name="ApexDeleteObject" testItemId="3" title="Delete Object: {OpportunityId}">
+      <arguments>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+        </argument>
+        <argument id="objectId">
+          <value class="variable">
+            <path element="OpportunityId"/>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+</testCase>

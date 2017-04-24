@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="13">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="1" title="Set Values: updatedBillingCity">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">AccountName</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="value" valueClass="string">TestingDB1</value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Global</value>
+              </namedValue>
+            </namedValues>
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">BillingCity</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="value" valueClass="string">testDelhi</value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Global</value>
+              </namedValue>
+            </namedValues>
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">Phone</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="value" valueClass="string">999999999</value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Global</value>
+              </namedValue>
+            </namedValues>
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">Type</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="value" valueClass="string">Admin</value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Global</value>
+              </namedValue>
+            </namedValues>
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">updatedBillingCity</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="value" valueClass="string">TestCity</value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Global</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+  <tags>
+    <string>disabled</string>
+  </tags>
+</testCase>

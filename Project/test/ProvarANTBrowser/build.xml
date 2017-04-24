@@ -1,0 +1,50 @@
+<project default="Firefox" xmlns:provar="antlib:com.provar.testrunner.ant">
+	<property environment="env"/>
+	<property name="provar.home" value="${env.PROVAR_HOME}"/>
+	<property name="testproject.home" value=".."/>
+	<property name="testproject.results" value="${testproject.home}\BrowserResults\Result"/>
+
+	<target name="Firefox">
+	
+		<provar:compile
+				provarHome="${provar.home}"
+				projectPath="${testproject.home}"
+			/>
+	
+		<provar:run
+			provarHome="${provar.home}"
+			projectPath="${testproject.home}"
+			resultsPath="${testproject.results}"
+			testEnvironment="default"
+			webBrowserConfiguration="Full Screen"
+			webBrowser="Firefox"
+	  		>
+			
+			<fileset dir="${testproject.home}\tests\Provar_Regression_Suite" includes="**\*.*">
+			<exclude name="**/Callable_Case/**"/>
+			</fileset>
+		</provar:run>
+	</target>
+<target name="IE">
+	
+		<provar:compile
+				provarHome="${provar.home}"
+				projectPath="${testproject.home}"
+			/>
+	
+		<provar:run
+			provarHome="${provar.home}"
+			projectPath="${testproject.home}"
+			resultsPath="${testproject.results}"
+			testEnvironment="default"
+			webBrowserConfiguration="Full Screen"
+			webBrowser="IE"
+	  		>
+			
+			<fileset dir="${testproject.home}\tests\Provar_Regression_Suite" includes="**\*.*">
+			<exclude name=""/>
+			</fileset>
+		</provar:run>
+	</target>
+
+</project>

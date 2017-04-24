@@ -1,0 +1,1547 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase failureBehaviour="Continue" id="11">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: Bank_RetailDepartment (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">UAT_Console_App</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Reopen</value>
+        </argument>
+        <argument id="vfDebug"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="privateBrowsingMode"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="377" title="On SF Opportunity list screen">
+      <arguments>
+        <argument id="uiConnectionName">
+          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+        </argument>
+        <argument id="target">
+          <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=List&amp;application=UAT_Console_App&amp;tab=standard-Opportunity&amp;listView=AllOpportunities"/>
+        </argument>
+        <argument id="navigate">
+          <value class="value" valueClass="string">Always</value>
+        </argument>
+        <argument id="scTabType">
+          <value class="value" valueClass="string">HomeTab</value>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">On SF Opportunity list screen</value>
+        </argument>
+        <argument id="windowSelection">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="windowSize">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="closeWindow"/>
+        <argument id="captureBefore"/>
+        <argument id="captureAfter"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="378">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="379" title="Click the New Opportunity button">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=newOpp&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26action%3DnewOpp"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                </argument>
+                <argument id="hover">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Click the New Opportunity button</value>
+                </argument>
+                <argument id="wait"/>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+      <generatedParameters>
+        <apiParam group="target" name="scTabType" seq="1000" title="Tab Type">
+          <summary>The tab type for Scaffolds</summary>
+          <type>
+            <choiceType>
+              <constraints>
+                <valueConstraint name="valuesSource">com.provar.plugins.sf.eclipse.ui:com.provar.plugins.forcedotcom.ui.valuesources.SfEnumChoiceListValuesSource</valueConstraint>
+                <valueConstraint name="valuesSourceDependencies">com.provar.plugins.forcedotcom.core.ui.SfUiTargetUrl$ConsoleTabType</valueConstraint>
+              </constraints>
+            </choiceType>
+          </type>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="375" title="Create new Opportunity">
+      <tags/>
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Create new Opportunity</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="374">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="30" title="On SF Opportunity new screen">
+              <arguments>
+                <argument id="target">
+                  <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=New&amp;objectIdVariableName=OpportunityId"/>
+                </argument>
+                <argument id="uiConnectionName">
+                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                </argument>
+                <argument id="sfUiTargetResultName">
+                  <value class="value" valueClass="string">OpportunityId</value>
+                </argument>
+                <argument id="sfUiTargetResultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+                <argument id="navigate">
+                  <value class="value" valueClass="string">Dont</value>
+                </argument>
+                <argument id="targetDescription">
+                  <value class="value" valueClass="string">On SF Opportunity new screen</value>
+                </argument>
+                <argument id="windowSelection">
+                  <value class="value" valueClass="string">Default</value>
+                </argument>
+                <argument id="windowSize">
+                  <value class="value" valueClass="string">Default</value>
+                </argument>
+                <argument id="captureBefore"/>
+                <argument id="captureAfter"/>
+                <argument id="closeWindow"/>
+                <argument id="scTabType">
+                  <value class="value" valueClass="string">CurrentTab</value>
+                </argument>
+                <argument id="scPrimaryTabName"/>
+                <argument id="scSecondaryTabName"/>
+              </arguments>
+              <clauses>
+                <clause name="substeps" testItemId="31">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="131" title="Submit Opportunity Information">
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">Submit Opportunity Information</value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="hidden" testItemId="132">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="34" title="Set the Opportunity Name field to {OpportunityName}">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=Name&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DName"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                </argument>
+                                <argument id="value">
+                                  <value class="variable">
+                                    <path element="OpportunityName"/>
+                                  </value>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Set the Opportunity Name field to {OpportunityName}</value>
+                                </argument>
+                                <argument id="wait"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="blur"/>
+                                <argument id="pressEnter"/>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Name" name="value" seq="10000" title="Value">
+                                  <type>
+                                    <textType>
+                                      <constraints>
+                                        <valueConstraint name="maxLength">120</valueConstraint>
+                                        <valueConstraint name="maxLines">1</valueConstraint>
+                                      </constraints>
+                                    </textType>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="35" title="Lookup the Account Name reference">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=AccountId&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DAccountId"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=sfLookup"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Lookup the Account Name reference</value>
+                                </argument>
+                                <argument id="wait"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                              </arguments>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="36" title="On SF Account lookup screen">
+                              <arguments>
+                                <argument id="target">
+                                  <value class="uiTarget" uri="sf:ui:target?lookup=Account"/>
+                                </argument>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                                </argument>
+                                <argument id="navigate">
+                                  <value class="value" valueClass="string">Dont</value>
+                                </argument>
+                                <argument id="targetDescription">
+                                  <value class="value" valueClass="string">On SF Account lookup screen</value>
+                                </argument>
+                                <argument id="windowSelection">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="windowSize">
+                                  <value class="value" valueClass="string">Default</value>
+                                </argument>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="closeWindow"/>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="37">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="38" title="Set the Search text to AccNum">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:locator?name=SearchName&amp;path=searchFrame"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                        </argument>
+                                        <argument id="value">
+                                          <value class="value" valueClass="string">AccNum</value>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Set the Search text to AccNum</value>
+                                        </argument>
+                                        <argument id="wait"/>
+                                        <argument id="captureBefore"/>
+                                        <argument id="captureAfter"/>
+                                        <argument id="blur"/>
+                                        <argument id="pressEnter"/>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="value" title="Value">
+                                          <type>
+                                            <textType/>
+                                          </type>
+                                        </apiParam>
+                                        <apiParam group="value" name="blur" title="Tab off field">
+                                          <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                        <apiParam group="value" name="pressEnter" title="Press Enter">
+                                          <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="39" title="Click the Go! button">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:locator?name=go&amp;path=searchFrame"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Click the Go! button</value>
+                                        </argument>
+                                        <argument id="wait"/>
+                                        <argument id="captureBefore"/>
+                                        <argument id="captureAfter"/>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="hover" title="Hover before Clicking">
+                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="40" title="Click the Account Name button">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:locator?name=nameSelector&amp;path=resultsFrame%2FresultsTable%2FnameColumn&amp;rowLocator=1"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Click the Account Name button</value>
+                                        </argument>
+                                        <argument id="wait"/>
+                                        <argument id="captureBefore"/>
+                                        <argument id="captureAfter"/>
+                                        <argument id="hover"/>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="hover" title="Hover before Clicking">
+                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="42" title="Set the Type picklist to {Type}">
+                              <tags/>
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=Type&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DType"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                </argument>
+                                <argument id="value">
+                                  <value class="variable">
+                                    <path element="Type"/>
+                                  </value>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Set the Type picklist to {Type}</value>
+                                </argument>
+                                <argument id="wait"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="blur"/>
+                                <argument id="pressEnter"/>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Type" name="value" seq="10000" title="Value">
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="boundedValues">Existing Business:Existing Business|New Business:New Business</valueConstraint>
+                                        <valueConstraint name="unrestricted">true</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="33" title="Set the Close Date field to {CloseDate}">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=CloseDate&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DCloseDate"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Set the Close Date field to {CloseDate}</value>
+                                </argument>
+                                <argument id="wait"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="value">
+                                  <value class="variable">
+                                    <path element="CloseDate"/>
+                                  </value>
+                                </argument>
+                                <argument id="blur"/>
+                                <argument id="pressEnter"/>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=CloseDate" name="value" title="Value">
+                                  <summary>The value to be populated.</summary>
+                                  <type>
+                                    <dateType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="blur" title="Tab off field">
+                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="pressEnter" title="Press Enter">
+                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="41" title="Set the Stage picklist to {Stage}">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=StageName&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DStageName"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                </argument>
+                                <argument id="value">
+                                  <value class="variable">
+                                    <path element="Stage"/>
+                                  </value>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Set the Stage picklist to {Stage}</value>
+                                </argument>
+                                <argument id="wait"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="blur"/>
+                                <argument id="pressEnter"/>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=StageName" name="value" title="Value">
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="boundedValues">Prospecting:Prospecting|Qualification:Qualification|Needs Analysis:Needs Analysis|Value Proposition:Value Proposition|Id. Decision Makers:Id. Decision Makers|Perception Analysis:Perception Analysis|Proposal/Price Quote:Proposal/Price Quote|Negotiation/Review:Negotiation/Review|Closed Won:Closed Won|Closed Lost:Closed Lost</valueConstraint>
+                                        <valueConstraint name="unrestricted">true</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="blur" title="Tab off field">
+                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="pressEnter" title="Press Enter">
+                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" name="UiAssert" testItemId="63" title="UI Assert">
+                              <arguments>
+                                <argument id="resultName">
+                                  <value class="value" valueClass="string">probabilityValue</value>
+                                </argument>
+                                <argument id="resultScope">
+                                  <value class="value" valueClass="string">Test</value>
+                                </argument>
+                                <argument id="fieldAssertions">
+                                  <value class="valueList" mutable="Mutable">
+                                    <uiFieldAssertion resultName="Probability">
+                                      <fieldLocator uri="ui:locator?name=Probability&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DProbability"/>
+                                      <attributeAssertions>
+                                        <uiAttributeAssertion attributeName="value" comparisonType="EqualTo">
+                                          <value class="value" valueClass="string">10</value>
+                                        </uiAttributeAssertion>
+                                        <uiAttributeAssertion attributeName="message" comparisonType="None"/>
+                                      </attributeAssertions>
+                                    </uiFieldAssertion>
+                                  </value>
+                                </argument>
+                                <argument id="pageAssertions">
+                                  <value class="valueList" mutable="Mutable"/>
+                                </argument>
+                                <argument id="captureAfter"/>
+                              </arguments>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="147" title="Verifying Probability value based on Stage selected">
+                              <arguments>
+                                <argument id="description">
+                                  <value class="value" valueClass="string">Verifying Probability value based on Stage selected</value>
+                                </argument>
+                              </arguments>
+                              <clauses>
+                                <clause name="hidden" testItemId="148">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.bundled.apis.Switch" name="Switch" testItemId="206" title="Switch: {Stage}">
+                                      <arguments>
+                                        <argument id="value">
+                                          <value class="variable">
+                                            <path element="Stage"/>
+                                          </value>
+                                        </argument>
+                                      </arguments>
+                                      <clauses>
+                                        <clause name="case" testItemId="207">
+                                          <steps>
+                                            <apiCall apiId="com.provar.plugins.bundled.apis.SwitchCase" name="SwitchCase" testItemId="208" title="Case: &quot;Prospecting&quot;">
+                                              <arguments>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">"Prospecting"</value>
+                                                </argument>
+                                                <argument id="caseSensitive">
+                                                  <value class="value" valueClass="string">No</value>
+                                                </argument>
+                                                <argument id="alreadyMatched"/>
+                                                <argument id="switchValue"/>
+                                              </arguments>
+                                              <clauses>
+                                                <clause name="steps" testItemId="209">
+                                                  <steps>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="238" title="Assert: {probabilityValue.fields.Probability.value} EqualTo 10">
+                                                      <arguments>
+                                                        <argument id="expectedValue">
+                                                          <value class="variable">
+                                                            <path element="probabilityValue"/>
+                                                            <path element="fields"/>
+                                                            <path element="Probability"/>
+                                                            <path element="value"/>
+                                                          </value>
+                                                        </argument>
+                                                        <argument id="actualValue">
+                                                          <value class="value" valueClass="string">10</value>
+                                                        </argument>
+                                                        <argument id="comparisonType">
+                                                          <value class="value" valueClass="string">EqualTo</value>
+                                                        </argument>
+                                                        <argument id="caseSensitive">
+                                                          <value class="value" valueClass="boolean">true</value>
+                                                        </argument>
+                                                        <argument id="retainDecimals">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="nullGreater">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchMultiLine">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchDotAll">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="failureMessage">
+                                                          <value class="value" valueClass="string">FAILURE - Probability value for Prospect is not correct</value>
+                                                        </argument>
+                                                      </arguments>
+                                                    </apiCall>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.control.Break" name="Break" testItemId="248"/>
+                                                  </steps>
+                                                </clause>
+                                              </clauses>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.bundled.apis.SwitchCase" name="SwitchCase" testItemId="210" title="Case: &quot;Qualification&quot;">
+                                              <arguments>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">"Qualification"</value>
+                                                </argument>
+                                                <argument id="caseSensitive">
+                                                  <value class="value" valueClass="string">No</value>
+                                                </argument>
+                                                <argument id="alreadyMatched"/>
+                                                <argument id="switchValue"/>
+                                              </arguments>
+                                              <clauses>
+                                                <clause name="steps" testItemId="211">
+                                                  <steps>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="70" title="Assert: {probabilityValue.fields.Probability.value} EqualTo 10">
+                                                      <arguments>
+                                                        <argument id="expectedValue">
+                                                          <value class="variable">
+                                                            <path element="probabilityValue"/>
+                                                            <path element="fields"/>
+                                                            <path element="Probability"/>
+                                                            <path element="value"/>
+                                                          </value>
+                                                        </argument>
+                                                        <argument id="actualValue">
+                                                          <value class="value" valueClass="string">10</value>
+                                                        </argument>
+                                                        <argument id="comparisonType">
+                                                          <value class="value" valueClass="string">EqualTo</value>
+                                                        </argument>
+                                                        <argument id="caseSensitive">
+                                                          <value class="value" valueClass="boolean">true</value>
+                                                        </argument>
+                                                        <argument id="retainDecimals">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="nullGreater">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchMultiLine">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchDotAll">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="failureMessage">
+                                                          <value class="value" valueClass="string">FAILURE - Probability value for Qualification is not correct</value>
+                                                        </argument>
+                                                      </arguments>
+                                                    </apiCall>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.control.Break" name="Break" testItemId="249"/>
+                                                  </steps>
+                                                </clause>
+                                              </clauses>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.bundled.apis.SwitchCase" name="SwitchCase" testItemId="214" title="Case: &quot;Needs Analysis&quot;">
+                                              <arguments>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">"Needs Analysis"</value>
+                                                </argument>
+                                                <argument id="caseSensitive">
+                                                  <value class="value" valueClass="string">No</value>
+                                                </argument>
+                                                <argument id="alreadyMatched"/>
+                                                <argument id="switchValue"/>
+                                              </arguments>
+                                              <clauses>
+                                                <clause name="steps" testItemId="215">
+                                                  <steps>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="240" title="Assert: {probabilityValue.fields.Probability.value} EqualTo 20">
+                                                      <arguments>
+                                                        <argument id="expectedValue">
+                                                          <value class="variable">
+                                                            <path element="probabilityValue"/>
+                                                            <path element="fields"/>
+                                                            <path element="Probability"/>
+                                                            <path element="value"/>
+                                                          </value>
+                                                        </argument>
+                                                        <argument id="actualValue">
+                                                          <value class="value" valueClass="string">20</value>
+                                                        </argument>
+                                                        <argument id="comparisonType">
+                                                          <value class="value" valueClass="string">EqualTo</value>
+                                                        </argument>
+                                                        <argument id="caseSensitive">
+                                                          <value class="value" valueClass="boolean">true</value>
+                                                        </argument>
+                                                        <argument id="retainDecimals">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="nullGreater">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchMultiLine">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchDotAll">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="failureMessage">
+                                                          <value class="value" valueClass="string">FAILURE - Probability value for Needs Analysis is not correct</value>
+                                                        </argument>
+                                                      </arguments>
+                                                    </apiCall>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.control.Break" name="Break" testItemId="250"/>
+                                                  </steps>
+                                                </clause>
+                                              </clauses>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.bundled.apis.SwitchCase" name="SwitchCase" testItemId="216" title="Case: &quot;Value Proposition&quot;">
+                                              <arguments>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">"Value Proposition"</value>
+                                                </argument>
+                                                <argument id="caseSensitive">
+                                                  <value class="value" valueClass="string">No</value>
+                                                </argument>
+                                                <argument id="alreadyMatched"/>
+                                                <argument id="switchValue"/>
+                                              </arguments>
+                                              <clauses>
+                                                <clause name="steps" testItemId="217">
+                                                  <steps>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="88" title="Assert: {probabilityValue.fields.Probability.value} EqualTo 50">
+                                                      <arguments>
+                                                        <argument id="expectedValue">
+                                                          <value class="variable">
+                                                            <path element="probabilityValue"/>
+                                                            <path element="fields"/>
+                                                            <path element="Probability"/>
+                                                            <path element="value"/>
+                                                          </value>
+                                                        </argument>
+                                                        <argument id="actualValue">
+                                                          <value class="value" valueClass="string">50</value>
+                                                        </argument>
+                                                        <argument id="comparisonType">
+                                                          <value class="value" valueClass="string">EqualTo</value>
+                                                        </argument>
+                                                        <argument id="caseSensitive">
+                                                          <value class="value" valueClass="boolean">true</value>
+                                                        </argument>
+                                                        <argument id="retainDecimals">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="nullGreater">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchMultiLine">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchDotAll">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="failureMessage">
+                                                          <value class="value" valueClass="string">FAILURE - Probability value for Value Proposition is not correct</value>
+                                                        </argument>
+                                                      </arguments>
+                                                    </apiCall>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.control.Break" name="Break" testItemId="251"/>
+                                                  </steps>
+                                                </clause>
+                                              </clauses>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.bundled.apis.SwitchCase" name="SwitchCase" testItemId="220" title="Case: &quot;Id. Decision Makers&quot;">
+                                              <arguments>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">"Id. Decision Makers"</value>
+                                                </argument>
+                                                <argument id="caseSensitive">
+                                                  <value class="value" valueClass="string">No</value>
+                                                </argument>
+                                                <argument id="alreadyMatched"/>
+                                                <argument id="switchValue"/>
+                                              </arguments>
+                                              <clauses>
+                                                <clause name="steps" testItemId="221">
+                                                  <steps>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="109" title="Assert: {probabilityValue.fields.Probability.value} EqualTo 60">
+                                                      <arguments>
+                                                        <argument id="expectedValue">
+                                                          <value class="variable">
+                                                            <path element="probabilityValue"/>
+                                                            <path element="fields"/>
+                                                            <path element="Probability"/>
+                                                            <path element="value"/>
+                                                          </value>
+                                                        </argument>
+                                                        <argument id="actualValue">
+                                                          <value class="value" valueClass="string">60</value>
+                                                        </argument>
+                                                        <argument id="comparisonType">
+                                                          <value class="value" valueClass="string">EqualTo</value>
+                                                        </argument>
+                                                        <argument id="caseSensitive">
+                                                          <value class="value" valueClass="boolean">true</value>
+                                                        </argument>
+                                                        <argument id="retainDecimals">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="nullGreater">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchMultiLine">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchDotAll">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="failureMessage">
+                                                          <value class="value" valueClass="string">FAILURE - Probability value for Id. Decision Makers is not correct</value>
+                                                        </argument>
+                                                      </arguments>
+                                                    </apiCall>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.control.Break" name="Break" testItemId="252"/>
+                                                  </steps>
+                                                </clause>
+                                              </clauses>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.bundled.apis.SwitchCase" name="SwitchCase" testItemId="222" title="Case: &quot;Perception Analysis&quot;">
+                                              <arguments>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">"Perception Analysis"</value>
+                                                </argument>
+                                                <argument id="caseSensitive">
+                                                  <value class="value" valueClass="string">No</value>
+                                                </argument>
+                                                <argument id="alreadyMatched"/>
+                                                <argument id="switchValue"/>
+                                              </arguments>
+                                              <clauses>
+                                                <clause name="steps" testItemId="223">
+                                                  <steps>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="106" title="Assert: {probabilityValue.fields.Probability.value} EqualTo 70">
+                                                      <arguments>
+                                                        <argument id="expectedValue">
+                                                          <value class="variable">
+                                                            <path element="probabilityValue"/>
+                                                            <path element="fields"/>
+                                                            <path element="Probability"/>
+                                                            <path element="value"/>
+                                                          </value>
+                                                        </argument>
+                                                        <argument id="actualValue">
+                                                          <value class="value" valueClass="string">70</value>
+                                                        </argument>
+                                                        <argument id="comparisonType">
+                                                          <value class="value" valueClass="string">EqualTo</value>
+                                                        </argument>
+                                                        <argument id="caseSensitive">
+                                                          <value class="value" valueClass="boolean">true</value>
+                                                        </argument>
+                                                        <argument id="retainDecimals">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="nullGreater">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchMultiLine">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchDotAll">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="failureMessage">
+                                                          <value class="value" valueClass="string">FAILURE - Probability value for Perception Analysis is not correct</value>
+                                                        </argument>
+                                                      </arguments>
+                                                    </apiCall>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.control.Break" name="Break" testItemId="253"/>
+                                                  </steps>
+                                                </clause>
+                                              </clauses>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.bundled.apis.SwitchCase" name="SwitchCase" testItemId="226" title="Case: &quot;Proposal Price Quote&quot;">
+                                              <arguments>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">"Proposal Price Quote"</value>
+                                                </argument>
+                                                <argument id="caseSensitive">
+                                                  <value class="value" valueClass="string">No</value>
+                                                </argument>
+                                                <argument id="alreadyMatched"/>
+                                                <argument id="switchValue"/>
+                                              </arguments>
+                                              <clauses>
+                                                <clause name="steps" testItemId="227">
+                                                  <steps>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="94" title="Assert: {probabilityValue.fields.Probability.value} EqualTo 75">
+                                                      <arguments>
+                                                        <argument id="expectedValue">
+                                                          <value class="variable">
+                                                            <path element="probabilityValue"/>
+                                                            <path element="fields"/>
+                                                            <path element="Probability"/>
+                                                            <path element="value"/>
+                                                          </value>
+                                                        </argument>
+                                                        <argument id="actualValue">
+                                                          <value class="value" valueClass="string">75</value>
+                                                        </argument>
+                                                        <argument id="comparisonType">
+                                                          <value class="value" valueClass="string">EqualTo</value>
+                                                        </argument>
+                                                        <argument id="caseSensitive">
+                                                          <value class="value" valueClass="boolean">true</value>
+                                                        </argument>
+                                                        <argument id="retainDecimals">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="nullGreater">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchMultiLine">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchDotAll">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="failureMessage">
+                                                          <value class="value" valueClass="string">FAILURE - Probability value for Proposal Price Quote is not correct</value>
+                                                        </argument>
+                                                      </arguments>
+                                                    </apiCall>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.control.Break" name="Break" testItemId="254"/>
+                                                  </steps>
+                                                </clause>
+                                              </clauses>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.bundled.apis.SwitchCase" name="SwitchCase" testItemId="228" title="Case: &quot;Negotiation/Review&quot;">
+                                              <arguments>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">"Negotiation/Review"</value>
+                                                </argument>
+                                                <argument id="caseSensitive">
+                                                  <value class="value" valueClass="string">No</value>
+                                                </argument>
+                                                <argument id="alreadyMatched"/>
+                                                <argument id="switchValue"/>
+                                              </arguments>
+                                              <clauses>
+                                                <clause name="steps" testItemId="229">
+                                                  <steps>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="97" title="Assert: {probabilityValue.fields.Probability.value} EqualTo 90">
+                                                      <arguments>
+                                                        <argument id="expectedValue">
+                                                          <value class="variable">
+                                                            <path element="probabilityValue"/>
+                                                            <path element="fields"/>
+                                                            <path element="Probability"/>
+                                                            <path element="value"/>
+                                                          </value>
+                                                        </argument>
+                                                        <argument id="actualValue">
+                                                          <value class="value" valueClass="string">90</value>
+                                                        </argument>
+                                                        <argument id="comparisonType">
+                                                          <value class="value" valueClass="string">EqualTo</value>
+                                                        </argument>
+                                                        <argument id="caseSensitive">
+                                                          <value class="value" valueClass="boolean">true</value>
+                                                        </argument>
+                                                        <argument id="retainDecimals">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="nullGreater">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchMultiLine">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchDotAll">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="failureMessage">
+                                                          <value class="value" valueClass="string">FAILURE - Probability value for Negotiation/Review is not correct</value>
+                                                        </argument>
+                                                      </arguments>
+                                                    </apiCall>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.control.Break" name="Break" testItemId="255"/>
+                                                  </steps>
+                                                </clause>
+                                              </clauses>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.bundled.apis.SwitchCase" name="SwitchCase" testItemId="232" title="Case: &quot;Closed Won&quot;">
+                                              <arguments>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">"Closed Won"</value>
+                                                </argument>
+                                                <argument id="caseSensitive">
+                                                  <value class="value" valueClass="string">No</value>
+                                                </argument>
+                                                <argument id="alreadyMatched"/>
+                                                <argument id="switchValue"/>
+                                              </arguments>
+                                              <clauses>
+                                                <clause name="steps" testItemId="233">
+                                                  <steps>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="100" title="Assert: {probabilityValue.fields.Probability.value} EqualTo 100">
+                                                      <arguments>
+                                                        <argument id="expectedValue">
+                                                          <value class="variable">
+                                                            <path element="probabilityValue"/>
+                                                            <path element="fields"/>
+                                                            <path element="Probability"/>
+                                                            <path element="value"/>
+                                                          </value>
+                                                        </argument>
+                                                        <argument id="actualValue">
+                                                          <value class="value" valueClass="string">100</value>
+                                                        </argument>
+                                                        <argument id="comparisonType">
+                                                          <value class="value" valueClass="string">EqualTo</value>
+                                                        </argument>
+                                                        <argument id="caseSensitive">
+                                                          <value class="value" valueClass="boolean">true</value>
+                                                        </argument>
+                                                        <argument id="retainDecimals">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="nullGreater">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchMultiLine">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchDotAll">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="failureMessage">
+                                                          <value class="value" valueClass="string">FAILURE - Probability value for Closed Won is not correct</value>
+                                                        </argument>
+                                                      </arguments>
+                                                    </apiCall>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.control.Break" name="Break" testItemId="256"/>
+                                                  </steps>
+                                                </clause>
+                                              </clauses>
+                                            </apiCall>
+                                            <apiCall apiId="com.provar.plugins.bundled.apis.SwitchCase" name="SwitchCase" testItemId="234" title="Case: &quot;Closed Lost&quot;">
+                                              <arguments>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">"Closed Lost"</value>
+                                                </argument>
+                                                <argument id="caseSensitive">
+                                                  <value class="value" valueClass="string">No</value>
+                                                </argument>
+                                                <argument id="alreadyMatched"/>
+                                                <argument id="switchValue"/>
+                                              </arguments>
+                                              <clauses>
+                                                <clause name="steps" testItemId="235">
+                                                  <steps>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="103" title="Assert: {probabilityValue.fields.Probability.value} EqualTo 0">
+                                                      <arguments>
+                                                        <argument id="expectedValue">
+                                                          <value class="variable">
+                                                            <path element="probabilityValue"/>
+                                                            <path element="fields"/>
+                                                            <path element="Probability"/>
+                                                            <path element="value"/>
+                                                          </value>
+                                                        </argument>
+                                                        <argument id="actualValue">
+                                                          <value class="value" valueClass="string">0</value>
+                                                        </argument>
+                                                        <argument id="comparisonType">
+                                                          <value class="value" valueClass="string">EqualTo</value>
+                                                        </argument>
+                                                        <argument id="caseSensitive">
+                                                          <value class="value" valueClass="boolean">true</value>
+                                                        </argument>
+                                                        <argument id="retainDecimals">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="nullGreater">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchMultiLine">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="matchDotAll">
+                                                          <value class="value" valueClass="boolean">false</value>
+                                                        </argument>
+                                                        <argument id="failureMessage">
+                                                          <value class="value" valueClass="string">FAILURE - Probability value for Closed Lost is not correct</value>
+                                                        </argument>
+                                                      </arguments>
+                                                    </apiCall>
+                                                    <apiCall apiId="com.provar.plugins.bundled.apis.control.Break" name="Break" testItemId="257"/>
+                                                  </steps>
+                                                </clause>
+                                              </clauses>
+                                            </apiCall>
+                                          </steps>
+                                        </clause>
+                                      </clauses>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="32" title="Set the Amount field to {Amount}">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=Amount&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DAmount"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                </argument>
+                                <argument id="value">
+                                  <value class="variable">
+                                    <path element="Amount"/>
+                                  </value>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Set the Amount field to {Amount}</value>
+                                </argument>
+                                <argument id="wait"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="blur"/>
+                                <argument id="pressEnter"/>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Amount" name="value" title="Value">
+                                  <type>
+                                    <numericType>
+                                      <constraints>
+                                        <valueConstraint name="length">18</valueConstraint>
+                                        <valueConstraint name="decimalPlaces">2</valueConstraint>
+                                      </constraints>
+                                    </numericType>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="blur" title="Tab off field">
+                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="pressEnter" title="Press Enter">
+                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="180" title="Submit Opportunity Additional Information">
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">Submit Opportunity Additional Information</value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="hidden" testItemId="181">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="44" title="Set the Lead Source picklist to {LeadSource}">
+                              <tags/>
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=LeadSource&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DLeadSource"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                </argument>
+                                <argument id="value">
+                                  <value class="variable">
+                                    <path element="LeadSource"/>
+                                  </value>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Set the Lead Source picklist to {LeadSource}</value>
+                                </argument>
+                                <argument id="wait"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="blur"/>
+                                <argument id="pressEnter"/>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=LeadSource" name="value" title="Value">
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="boundedValues">Advertisement:Advertisement|Employee Referral:Employee Referral|External Referral:External Referral|Partner:Partner|Public Relations:Public Relations|Seminar - Internal:Seminar - Internal|Seminar - Partner:Seminar - Partner|Trade Show:Trade Show|Web:Web|Word of mouth:Word of mouth|Other:Other</valueConstraint>
+                                        <valueConstraint name="unrestricted">true</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="blur" title="Tab off field">
+                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="pressEnter" title="Press Enter">
+                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="183" title="Submit Opportunity Description Information">
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">Submit Opportunity Description Information</value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="hidden" testItemId="184">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="46" title="Set the Description field to {Description}">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=Description&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DDescription"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Set the Description field to {Description}</value>
+                                </argument>
+                                <argument id="wait"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="value">
+                                  <value class="variable">
+                                    <path element="Description"/>
+                                  </value>
+                                </argument>
+                                <argument id="blur"/>
+                                <argument id="pressEnter"/>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Description" name="value" title="Value">
+                                  <type>
+                                    <textType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="blur" title="Tab off field">
+                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                                <apiParam group="value" name="pressEnter" title="Press Enter">
+                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="186" title="Select multiple selection item the TestMulti field to {TestMulti}">
+                              <arguments>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="ui:locator?name=TestMulti__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DTestMulti__c"/>
+                                </argument>
+                                <argument id="interaction">
+                                  <value class="uiInteraction" uri="ui:interaction?name=sfSelect"/>
+                                </argument>
+                                <argument id="interactionDescription">
+                                  <value class="value" valueClass="string">Select multiple selection item the TestMulti field to {TestMulti}</value>
+                                </argument>
+                                <argument id="wait"/>
+                                <argument id="captureBefore"/>
+                                <argument id="captureAfter"/>
+                                <argument id="value">
+                                  <value class="variable">
+                                    <path element="TestMulti"/>
+                                  </value>
+                                </argument>
+                              </arguments>
+                              <generatedParameters>
+                                <apiParam group="value" name="value" title="Value">
+                                  <summary>The value to be populated.</summary>
+                                  <type>
+                                    <choiceType>
+                                      <constraints>
+                                        <valueConstraint name="boundedValues">Value1:Value1|Value2:Value2|Value3:Value3|Value4:Value4</valueConstraint>
+                                        <valueConstraint name="multiSelection">true</valueConstraint>
+                                      </constraints>
+                                    </choiceType>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="47" title="Click the Save button">
+                      <arguments>
+                        <argument id="locator">
+                          <value class="uiLocator" uri="ui:locator?name=save&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26action%3Dsave"/>
+                        </argument>
+                        <argument id="interaction">
+                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                        </argument>
+                        <argument id="interactionDescription">
+                          <value class="value" valueClass="string">Click the Save button</value>
+                        </argument>
+                        <argument id="wait"/>
+                        <argument id="captureBefore"/>
+                        <argument id="captureAfter"/>
+                        <argument id="hover"/>
+                      </arguments>
+                      <generatedParameters>
+                        <apiParam group="value" name="hover" title="Hover before Clicking">
+                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                          <type>
+                            <booleanType/>
+                          </type>
+                        </apiParam>
+                      </generatedParameters>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+              <generatedParameters>
+                <apiParam group="result" name="sfUiTargetResultName" resultNameParameter="true" title="Result Name">
+                  <summary>The name under which the resulting Opportunity Id will be stored.</summary>
+                  <type>
+                    <textType/>
+                  </type>
+                  <resultValueClasses>
+                    <string>ApexObjectId</string>
+                  </resultValueClasses>
+                </apiParam>
+                <apiParam group="result" name="sfUiTargetResultScope" title="Result Scope">
+                  <summary>The life-span of the resulting identifiers.</summary>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="boundedValues">Global|Folder|Test|Local</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+                <apiParam group="target" name="scTabType" seq="1000" title="Tab Type">
+                  <summary>The tab type for Scaffolds</summary>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="valuesSource">com.provar.plugins.sf.eclipse.ui:com.provar.plugins.forcedotcom.ui.valuesources.SfEnumChoiceListValuesSource</valueConstraint>
+                        <valueConstraint name="valuesSourceDependencies">com.provar.plugins.forcedotcom.core.ui.SfUiTargetUrl$ConsoleTabType</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="376" title="Assert values after creating Opportunity">
+      <tags/>
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Assert values after creating Opportunity</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="193">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="189" title="On SF Opportunity view screen">
+              <arguments>
+                <argument id="uiConnectionName">
+                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                </argument>
+                <argument id="target">
+                  <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=View"/>
+                </argument>
+                <argument id="navigate">
+                  <value class="value" valueClass="string">Dont</value>
+                </argument>
+                <argument id="sfUiTargetObjectId">
+                  <value class="variable">
+                    <path element="OpportunityId"/>
+                  </value>
+                </argument>
+                <argument id="targetDescription">
+                  <value class="value" valueClass="string">On SF Opportunity view screen</value>
+                </argument>
+                <argument id="windowSelection">
+                  <value class="value" valueClass="string">Default</value>
+                </argument>
+                <argument id="windowSize">
+                  <value class="value" valueClass="string">Default</value>
+                </argument>
+                <argument id="closeWindow"/>
+                <argument id="captureBefore"/>
+                <argument id="captureAfter"/>
+                <argument id="scTabType">
+                  <value class="value" valueClass="string">CurrentTab</value>
+                </argument>
+                <argument id="scPrimaryTabName"/>
+                <argument id="scSecondaryTabName"/>
+              </arguments>
+              <clauses>
+                <clause name="substeps" testItemId="190">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" name="UiAssert" testItemId="191" title="UI Assert">
+                      <arguments>
+                        <argument id="resultName">
+                          <value class="value" valueClass="string">Values</value>
+                        </argument>
+                        <argument id="resultScope">
+                          <value class="value" valueClass="string">Test</value>
+                        </argument>
+                        <argument id="fieldAssertions">
+                          <value class="valueList" mutable="Mutable">
+                            <uiFieldAssertion resultName="Name">
+                              <fieldLocator uri="ui:locator?name=Name&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DName"/>
+                              <attributeAssertions>
+                                <uiAttributeAssertion attributeName="value" comparisonType="EqualTo">
+                                  <value class="variable">
+                                    <path element="OpportunityName"/>
+                                  </value>
+                                </uiAttributeAssertion>
+                                <uiAttributeAssertion attributeName="message" comparisonType="None"/>
+                              </attributeAssertions>
+                            </uiFieldAssertion>
+                            <uiFieldAssertion resultName="Type">
+                              <fieldLocator uri="ui:locator?name=Type&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DType"/>
+                              <attributeAssertions>
+                                <uiAttributeAssertion attributeName="value" comparisonType="EqualTo">
+                                  <value class="variable">
+                                    <path element="Type"/>
+                                  </value>
+                                </uiAttributeAssertion>
+                                <uiAttributeAssertion attributeName="message" comparisonType="None"/>
+                              </attributeAssertions>
+                            </uiFieldAssertion>
+                            <uiFieldAssertion resultName="StageName">
+                              <fieldLocator uri="ui:locator?name=StageName&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DStageName"/>
+                              <attributeAssertions>
+                                <uiAttributeAssertion attributeName="value" comparisonType="EqualTo">
+                                  <value class="variable">
+                                    <path element="Stage"/>
+                                  </value>
+                                </uiAttributeAssertion>
+                                <uiAttributeAssertion attributeName="message" comparisonType="None"/>
+                              </attributeAssertions>
+                            </uiFieldAssertion>
+                            <uiFieldAssertion resultName="Probability">
+                              <fieldLocator uri="ui:locator?name=Probability&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DProbability"/>
+                              <attributeAssertions>
+                                <uiAttributeAssertion attributeName="value" comparisonType="Contains">
+                                  <value class="variable">
+                                    <path element="probabilityValue"/>
+                                    <path element="fields"/>
+                                    <path element="Probability"/>
+                                    <path element="value"/>
+                                  </value>
+                                </uiAttributeAssertion>
+                                <uiAttributeAssertion attributeName="message" comparisonType="None"/>
+                              </attributeAssertions>
+                            </uiFieldAssertion>
+                            <uiFieldAssertion resultName="LeadSource">
+                              <fieldLocator uri="ui:locator?name=LeadSource&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DLeadSource"/>
+                              <attributeAssertions>
+                                <uiAttributeAssertion attributeName="value" comparisonType="EqualTo">
+                                  <value class="variable">
+                                    <path element="LeadSource"/>
+                                  </value>
+                                </uiAttributeAssertion>
+                                <uiAttributeAssertion attributeName="message" comparisonType="None"/>
+                              </attributeAssertions>
+                            </uiFieldAssertion>
+                            <uiFieldAssertion resultName="Description">
+                              <fieldLocator uri="ui:locator?name=Description&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DDescription"/>
+                              <attributeAssertions>
+                                <uiAttributeAssertion attributeName="value" comparisonType="EqualTo">
+                                  <value class="variable">
+                                    <path element="Description"/>
+                                  </value>
+                                </uiAttributeAssertion>
+                                <uiAttributeAssertion attributeName="message" comparisonType="None"/>
+                              </attributeAssertions>
+                            </uiFieldAssertion>
+                            <uiFieldAssertion resultName="TestMulti__c">
+                              <fieldLocator uri="ui:locator?name=TestMulti__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DTestMulti__c"/>
+                              <attributeAssertions>
+                                <uiAttributeAssertion attributeName="value" comparisonType="Contains">
+                                  <value class="variable">
+                                    <path element="TestMulti"/>
+                                  </value>
+                                </uiAttributeAssertion>
+                              </attributeAssertions>
+                            </uiFieldAssertion>
+                          </value>
+                        </argument>
+                        <argument id="pageAssertions">
+                          <value class="valueList" mutable="Mutable"/>
+                        </argument>
+                        <argument id="captureAfter"/>
+                      </arguments>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+              <generatedParameters>
+                <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+                  <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+                  <type>
+                    <textType/>
+                  </type>
+                </apiParam>
+                <apiParam group="target" name="scTabType" seq="1000" title="Tab Type">
+                  <summary>The tab type for Scaffolds</summary>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="valuesSource">com.provar.plugins.sf.eclipse.ui:com.provar.plugins.forcedotcom.ui.valuesources.SfEnumChoiceListValuesSource</valueConstraint>
+                        <valueConstraint name="valuesSourceDependencies">com.provar.plugins.forcedotcom.core.ui.SfUiTargetUrl$ConsoleTabType</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+  </steps>
+</testCase>

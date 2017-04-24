@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="38">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="247" title="Declare variables">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Declare variables</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="9">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="20" title="Opportunity Information Variables">
+              <arguments>
+                <argument id="description">
+                  <value class="value" valueClass="string">Opportunity Information Variables</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="hidden" testItemId="21">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="10" title="Set Values: OpportunityName">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">OpportunityName</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="compound">
+                                  <parts>
+                                    <value valueClass="string">Opportunity </value>
+                                    <funcCall id="UniqueId">
+                                      <argument id="length">
+                                        <value class="value" valueClass="decimal">3</value>
+                                      </argument>
+                                    </funcCall>
+                                  </parts>
+                                </value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Folder</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="11" title="Set Values: Type">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">Type</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="value" valueClass="string">New Business</value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Folder</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="15" title="Set Values: CloseDate">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">CloseDate</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="funcCall" id="DateAdd">
+                                  <argument id="date">
+                                    <value class="variable">
+                                      <path element="TODAY"/>
+                                    </value>
+                                  </argument>
+                                  <argument id="amount">
+                                    <value class="value" valueClass="decimal">7</value>
+                                  </argument>
+                                </value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Folder</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="17" title="Set Values: Stage">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">Stage</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="value" valueClass="string">Qualification</value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Folder</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="18" title="Set Values: Amount">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">Amount</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="value" valueClass="string">100000</value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Folder</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="122" title="Opportunity Additional Information Variables">
+              <arguments>
+                <argument id="description">
+                  <value class="value" valueClass="string">Opportunity Additional Information Variables</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="hidden" testItemId="123">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="126" title="Set Values: LeadSource">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">LeadSource</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="value" valueClass="string">Partner</value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Folder</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="130" title="Opportunity Description Information Variables">
+              <arguments>
+                <argument id="description">
+                  <value class="value" valueClass="string">Opportunity Description Information Variables</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="hidden" testItemId="131">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="132" title="Set Values: Description">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">Description</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="value" valueClass="string">We are creating a new Opportunity in this test step</value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Folder</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="249" title="Set Values: TestMulti">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">TestMulti</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="value" valueClass="string">Value2</value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Folder</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="238" title="Contact Updated Variable">
+              <arguments>
+                <argument id="description">
+                  <value class="value" valueClass="string">Contact Updated Variable</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="hidden" testItemId="239">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="240" title="Set Values: TypeUpdated">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">TypeUpdated</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="value" valueClass="string">Existing Business</value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Folder</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="241" title="Set Values: CloseDateUpdated">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">CloseDateUpdated</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="funcCall" id="DateAdd">
+                                  <argument id="date">
+                                    <value class="variable">
+                                      <path element="TODAY"/>
+                                    </value>
+                                  </argument>
+                                  <argument id="amount">
+                                    <value class="value" valueClass="decimal">8</value>
+                                  </argument>
+                                </value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Folder</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="248" title="Set Values: StageUpdated">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">StageUpdated</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="value" valueClass="string">Perception Analysis</value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Folder</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="250" title="Set Values: LeadSourceUpdated">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">LeadSourceUpdated</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="value" valueClass="string">Web</value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Folder</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="251" title="Set Values: TestMultiUpdated">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">TestMultiUpdated</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="value" valueClass="string">Value3;Value4</value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Test</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+  </steps>
+  <tags/>
+</testCase>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase registryId="ab79fbbe-64fc-44c0-8ca7-823eeafc0ec1" visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" name="ForEach" testItemId="19" title="For Each: {Gr_TestCases[AccessLevel = &quot;Public&quot;]}=&gt;Gr_TestCase">
+      <tags/>
+      <arguments>
+        <argument id="list">
+          <value class="variable">
+            <path element="Gr_TestCases">
+              <filter class="conditionFilter">
+                <condition class="eq">
+                  <lhs class="variable">
+                    <path element="AccessLevel"/>
+                  </lhs>
+                  <rhs class="value" valueClass="string">Public</rhs>
+                </condition>
+              </filter>
+            </path>
+          </value>
+        </argument>
+        <argument id="fromItem"/>
+        <argument id="valueName">
+          <value class="value" valueClass="string">Gr_TestCase</value>
+        </argument>
+        <argument id="continueOnFailure"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="5">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="6" title="Set Values: SourceOrg">
+              <tags/>
+              <arguments>
+                <argument id="values">
+                  <value class="valueList">
+                    <namedValues>
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">SourceOrg</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="value" valueClass="string">Test1</value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" name="ForEach" testItemId="20" title="For Each: {Gr_TestCases[AccessLevel = &quot;Private&quot;]}=&gt;Gr_TestCase">
+      <tags/>
+      <arguments>
+        <argument id="list">
+          <value class="variable">
+            <path element="Gr_TestCases">
+              <filter class="conditionFilter">
+                <condition class="eq">
+                  <lhs class="variable">
+                    <path element="AccessLevel"/>
+                  </lhs>
+                  <rhs class="value" valueClass="string">Private</rhs>
+                </condition>
+              </filter>
+            </path>
+          </value>
+        </argument>
+        <argument id="fromItem"/>
+        <argument id="valueName">
+          <value class="value" valueClass="string">Gr_TestCase</value>
+        </argument>
+        <argument id="continueOnFailure"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="17">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="18" title="Set Values: SourceOrg">
+              <tags/>
+              <arguments>
+                <argument id="values">
+                  <value class="valueList">
+                    <namedValues>
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">SourceOrg</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="value" valueClass="string">Test2</value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+  </steps>
+  <params>
+    <param name="Gr_TestCases" title="Gr_TestCases">
+      <summary/>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+            <valueConstraint name="regex"/>
+          </constraints>
+        </textType>
+      </type>
+    </param>
+  </params>
+  <args>
+    <argument id="Gr_TestCases"/>
+  </args>
+  <tags/>
+</testCase>

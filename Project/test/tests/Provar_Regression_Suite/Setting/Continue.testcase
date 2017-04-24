@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase failureBehaviour="Continue" id="20">
+  <summary>undefined</summary>
+  <remarks>undefined</remarks>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="1" title="Set Values: CompanyName">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">CompanyName</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="value" valueClass="string">makepositive</value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="4" title="Set Values: FakeValue">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">FakeValue</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="value" valueClass="string">This is a FAKE value</value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="2" title="Assert: {CompanyName} EqualTo {FakeValue}">
+      <arguments>
+        <argument id="expectedValue">
+          <value class="variable">
+            <path element="CompanyName"/>
+          </value>
+        </argument>
+        <argument id="actualValue">
+          <value class="variable">
+            <path element="FakeValue"/>
+          </value>
+        </argument>
+        <argument id="comparisonType">
+          <value class="value" valueClass="string">EqualTo</value>
+        </argument>
+        <argument id="caseSensitive">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="retainDecimals">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="nullGreater">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="matchMultiLine">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="matchDotAll">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="failureMessage"/>
+      </arguments>
+      <expectedExceptions/>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="5" title="Assert: abc EqualTo {TestCaseOutcome()}">
+      <arguments>
+        <argument id="expectedValue">
+          <value class="value" valueClass="string">abc</value>
+        </argument>
+        <argument id="actualValue">
+          <value class="funcCall" id="TestCaseOutcome"/>
+        </argument>
+        <argument id="comparisonType">
+          <value class="value" valueClass="string">EqualTo</value>
+        </argument>
+        <argument id="caseSensitive">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="retainDecimals">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="nullGreater">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="matchMultiLine">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="matchDotAll">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="failureMessage"/>
+      </arguments>
+    </apiCall>
+  </steps>
+  <tags/>
+</testCase>

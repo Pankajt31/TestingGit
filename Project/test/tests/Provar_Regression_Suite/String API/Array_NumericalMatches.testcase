@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase>
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Match" name="Match" testItemId="1" title="Match: templates/Match_RegEx.txt=&gt;[1234567]=&gt;NumericalMatch">
+      <arguments>
+        <argument id="input">
+          <value class="template">templates/Match_RegEx.txt</value>
+        </argument>
+        <argument id="regex">
+          <value class="value" valueClass="string">[1234567]</value>
+        </argument>
+        <argument id="caseInsensitive"/>
+        <argument id="resultName">
+          <value class="value" valueClass="string">NumericalMatch</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+  <tags/>
+</testCase>

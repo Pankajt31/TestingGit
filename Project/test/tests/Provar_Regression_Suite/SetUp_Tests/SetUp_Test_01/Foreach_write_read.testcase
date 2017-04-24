@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase callTitle="Validates the set up test , Split,  'If' ,'For each' ,Write ,Read  API's" id="174">
+  <summary>&lt;p&gt;This tests allows you to read&lt;/p&gt;\n&lt;p&gt;and write values 'one, two, three, four 'that are split first&lt;/p&gt;\n&lt;p&gt;and then assigned to their respective variables using For each&lt;/p&gt;</summary>
+  <remarks>&lt;p&gt;This test case makes use of the following API's&lt;/p&gt;\n&lt;p&gt;1)Split&lt;/p&gt;\n&lt;p&gt;2)Set Valus&lt;/p&gt;\n&lt;p&gt;3)For Each&lt;/p&gt;\n&lt;p&gt;4)Write &lt;/p&gt;\n&lt;p&gt;5)Read&lt;/p&gt;</remarks>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.If" name="If" testItemId="1" title="If: {Count(Tokens) = 4}">
+      <arguments>
+        <argument id="condition">
+          <value class="eq">
+            <lhs class="funcCall" id="Count">
+              <argument id="value">
+                <value class="variable">
+                  <path element="Tokens"/>
+                </value>
+              </argument>
+            </lhs>
+            <rhs class="value" valueClass="decimal">4</rhs>
+          </value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="then" testItemId="6">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" name="ForEach" testItemId="18" title="For Each: {Tokens}=&gt;Iteration">
+              <arguments>
+                <argument id="list">
+                  <value class="variable">
+                    <path element="Tokens"/>
+                  </value>
+                </argument>
+                <argument id="fromItem"/>
+                <argument id="valueName">
+                  <value class="value" valueClass="string">Iteration</value>
+                </argument>
+                <argument id="continueOnFailure">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="substeps" testItemId="7">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="5" title="Set Values: var1, var2, var3, var4">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList">
+                            <namedValues>
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">var1</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="compound">
+                                  <parts>
+                                    <value valueClass="string">I can write text with variables within the Expression editor ,Iteration =</value>
+                                    <variable>
+                                      <path element="Iteration"/>
+                                    </variable>
+                                  </parts>
+                                </value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Test</value>
+                              </namedValue>
+                            </namedValues>
+                            <namedValues>
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">var2</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="compound">
+                                  <parts>
+                                    <value valueClass="string">I could also multiply =</value>
+                                    <variable>
+                                      <path element="Tokens">
+                                        <filter class="index">
+                                          <index valueClass="decimal">1</index>
+                                        </filter>
+                                      </path>
+                                    </variable>
+                                  </parts>
+                                </value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Test</value>
+                              </namedValue>
+                            </namedValues>
+                            <namedValues>
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">var3</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="compound">
+                                  <parts>
+                                    <value valueClass="string">I can start all over again =</value>
+                                    <variable>
+                                      <path element="Tokens">
+                                        <filter class="index">
+                                          <index valueClass="decimal">2</index>
+                                        </filter>
+                                      </path>
+                                    </variable>
+                                  </parts>
+                                </value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Test</value>
+                              </namedValue>
+                            </namedValues>
+                            <namedValues>
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">var4</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="compound">
+                                  <parts>
+                                    <value valueClass="string">Or just include the value = </value>
+                                    <variable>
+                                      <path element="Tokens">
+                                        <filter class="index">
+                                          <index valueClass="decimal">3</index>
+                                        </filter>
+                                      </path>
+                                    </variable>
+                                  </parts>
+                                </value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Test</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.io.Write" name="Write" testItemId="8" title="Write: {Tokens}=&gt;excel:templates/workbook.xlsx?worksheet=sheet1">
+                      <arguments>
+                        <argument id="data">
+                          <value class="variable">
+                            <path element="Tokens"/>
+                          </value>
+                        </argument>
+                        <argument id="dataUrl">
+                          <value class="urlTarget" uri="excel:templates/workbook.xlsx?worksheet=sheet1"/>
+                        </argument>
+                        <argument id="targetDescription">
+                          <value class="value" valueClass="string">excel:templates/workbook.xlsx?worksheet=sheet1</value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.io.Read" name="Read" testItemId="12" title="Read: templates/workbook.xlsx=&gt;Contents">
+                      <arguments>
+                        <argument id="urlString">
+                          <value class="url">templates/workbook.xlsx</value>
+                        </argument>
+                        <argument id="contentFormat">
+                          <value class="value" valueClass="string">Text</value>
+                        </argument>
+                        <argument id="contentEncoding">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="resultName">
+                          <value class="value" valueClass="string">Contents</value>
+                        </argument>
+                        <argument id="resultScope">
+                          <value class="value" valueClass="string">Test</value>
+                        </argument>
+                        <argument id="storeAs">
+                          <value class="value" valueClass="string">Text</value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+  </steps>
+  <tags/>
+</testCase>

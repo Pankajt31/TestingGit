@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="2">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Split" name="Split" testItemId="3" title="Split: templates/Replace.txt=&gt;,=&gt;Tokens">
+      <arguments>
+        <argument id="input">
+          <value class="template">templates/Replace.txt</value>
+        </argument>
+        <argument id="separator">
+          <value class="value" valueClass="string">,</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Tokens</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+      <parameterValueSources/>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" name="ForEach" testItemId="5" title="For Each: {Tokens}=&gt;content">
+      <arguments>
+        <argument id="list">
+          <value class="variable">
+            <path element="Tokens"/>
+          </value>
+        </argument>
+        <argument id="fromItem">
+          <value class="value" valueClass="decimal">1</value>
+        </argument>
+        <argument id="valueName">
+          <value class="value" valueClass="string">content</value>
+        </argument>
+        <argument id="continueOnFailure"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="6">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.string.Replace" name="Replace" testItemId="2" title="Replace: {content}=&gt;{regex}=&gt;Testreplace">
+              <tags/>
+              <arguments>
+                <argument id="input">
+                  <value class="variable">
+                    <path element="content"/>
+                  </value>
+                </argument>
+                <argument id="find">
+                  <value class="value" valueClass="string">replace</value>
+                </argument>
+                <argument id="replacement">
+                  <value class="value" valueClass="string">replacement</value>
+                </argument>
+                <argument id="caseInsensitive"/>
+                <argument id="resultName">
+                  <value class="value" valueClass="string">Testreplace</value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+  </steps>
+  <tags/>
+</testCase>

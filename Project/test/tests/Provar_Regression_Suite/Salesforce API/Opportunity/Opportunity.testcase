@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase failureBehaviour="Continue" id="9">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: Bank_RetailDepartment (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Reopen</value>
+        </argument>
+        <argument id="uiApplicationName"/>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="vfDebug"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="environment"/>
+        <argument id="privateBrowsingMode"/>
+        <argument id="securityToken"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="5" title="Variable Declaration">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Variable Declaration</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="6">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="47" title="Actual Variables">
+              <arguments>
+                <argument id="description">
+                  <value class="value" valueClass="string">Actual Variables</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="hidden" testItemId="48">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="101" title="Opportunity Information">
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">Opportunity Information</value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="hidden" testItemId="102">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="105" title="Set Values: OpportunityName">
+                              <arguments>
+                                <argument id="values">
+                                  <value class="valueList" mutable="Mutable">
+                                    <namedValues mutable="Mutable">
+                                      <namedValue name="valuePath">
+                                        <value class="value" valueClass="string">OpportunityName</value>
+                                      </namedValue>
+                                      <namedValue name="value">
+                                        <value class="value" valueClass="string">OpportunityName(3)}</value>
+                                      </namedValue>
+                                      <namedValue name="valueScope">
+                                        <value class="value" valueClass="string">Test</value>
+                                      </namedValue>
+                                    </namedValues>
+                                  </value>
+                                </argument>
+                              </arguments>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="106" title="Set Values: Type">
+                              <arguments>
+                                <argument id="values">
+                                  <value class="valueList" mutable="Mutable">
+                                    <namedValues mutable="Mutable">
+                                      <namedValue name="valuePath">
+                                        <value class="value" valueClass="string">Type</value>
+                                      </namedValue>
+                                      <namedValue name="value">
+                                        <value class="value" valueClass="string">Existing Business</value>
+                                      </namedValue>
+                                      <namedValue name="valueScope">
+                                        <value class="value" valueClass="string">Test</value>
+                                      </namedValue>
+                                    </namedValues>
+                                  </value>
+                                </argument>
+                              </arguments>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="108" title="Set Values: CloseDate">
+                              <arguments>
+                                <argument id="values">
+                                  <value class="valueList" mutable="Mutable">
+                                    <namedValues mutable="Mutable">
+                                      <namedValue name="valuePath">
+                                        <value class="value" valueClass="string">CloseDate</value>
+                                      </namedValue>
+                                      <namedValue name="value">
+                                        <value class="funcCall" id="DateAdd">
+                                          <argument id="date">
+                                            <value class="variable">
+                                              <path element="TODAY"/>
+                                            </value>
+                                          </argument>
+                                          <argument id="amount">
+                                            <value class="value" valueClass="decimal">7</value>
+                                          </argument>
+                                        </value>
+                                      </namedValue>
+                                      <namedValue name="valueScope">
+                                        <value class="value" valueClass="string">Test</value>
+                                      </namedValue>
+                                    </namedValues>
+                                  </value>
+                                </argument>
+                              </arguments>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="110" title="Set Values: Stage">
+                              <arguments>
+                                <argument id="values">
+                                  <value class="valueList" mutable="Mutable">
+                                    <namedValues mutable="Mutable">
+                                      <namedValue name="valuePath">
+                                        <value class="value" valueClass="string">Stage</value>
+                                      </namedValue>
+                                      <namedValue name="value">
+                                        <value class="value" valueClass="string">Prospecting</value>
+                                      </namedValue>
+                                      <namedValue name="valueScope">
+                                        <value class="value" valueClass="string">Test</value>
+                                      </namedValue>
+                                    </namedValues>
+                                  </value>
+                                </argument>
+                              </arguments>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="111" title="Set Values: Amount">
+                              <arguments>
+                                <argument id="values">
+                                  <value class="valueList" mutable="Mutable">
+                                    <namedValues mutable="Mutable">
+                                      <namedValue name="valuePath">
+                                        <value class="value" valueClass="string">Amount</value>
+                                      </namedValue>
+                                      <namedValue name="value">
+                                        <value class="value" valueClass="string">100000</value>
+                                      </namedValue>
+                                      <namedValue name="valueScope">
+                                        <value class="value" valueClass="string">Test</value>
+                                      </namedValue>
+                                    </namedValues>
+                                  </value>
+                                </argument>
+                              </arguments>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="114" title="Additional Information">
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">Additional Information</value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="hidden" testItemId="115">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="121" title="Set Values: LeadSource">
+                              <arguments>
+                                <argument id="values">
+                                  <value class="valueList" mutable="Mutable">
+                                    <namedValues mutable="Mutable">
+                                      <namedValue name="valuePath">
+                                        <value class="value" valueClass="string">LeadSource</value>
+                                      </namedValue>
+                                      <namedValue name="value">
+                                        <value class="value" valueClass="string">Advertisement</value>
+                                      </namedValue>
+                                      <namedValue name="valueScope">
+                                        <value class="value" valueClass="string">Test</value>
+                                      </namedValue>
+                                    </namedValues>
+                                  </value>
+                                </argument>
+                              </arguments>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="122" title="Description Information">
+                      <arguments>
+                        <argument id="description">
+                          <value class="value" valueClass="string">Description Information</value>
+                        </argument>
+                      </arguments>
+                      <clauses>
+                        <clause name="hidden" testItemId="123">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="60" title="Set Values: Description">
+                              <arguments>
+                                <argument id="values">
+                                  <value class="valueList" mutable="Mutable">
+                                    <namedValues mutable="Mutable">
+                                      <namedValue name="valuePath">
+                                        <value class="value" valueClass="string">Description</value>
+                                      </namedValue>
+                                      <namedValue name="value">
+                                        <value class="value" valueClass="string">We are creating Opportunity data using Provar API</value>
+                                      </namedValue>
+                                      <namedValue name="valueScope">
+                                        <value class="value" valueClass="string">Test</value>
+                                      </namedValue>
+                                    </namedValues>
+                                  </value>
+                                </argument>
+                              </arguments>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="135" title="Set Values: TestMulti">
+                              <arguments>
+                                <argument id="values">
+                                  <value class="valueList" mutable="Mutable">
+                                    <namedValues mutable="Mutable">
+                                      <namedValue name="valuePath">
+                                        <value class="value" valueClass="string">TestMulti</value>
+                                      </namedValue>
+                                      <namedValue name="value">
+                                        <value class="value" valueClass="string">Value1;Value2</value>
+                                      </namedValue>
+                                      <namedValue name="valueScope">
+                                        <value class="value" valueClass="string">Test</value>
+                                      </namedValue>
+                                    </namedValues>
+                                  </value>
+                                </argument>
+                              </arguments>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="23" title="Updated Variables">
+              <arguments>
+                <argument id="description">
+                  <value class="value" valueClass="string">Updated Variables</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="hidden" testItemId="24">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="28" title="Set Values: UpdatedCloseDate">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">UpdatedCloseDate</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="funcCall" id="DateAdd">
+                                  <argument id="date">
+                                    <value class="variable">
+                                      <path element="TODAY"/>
+                                    </value>
+                                  </argument>
+                                  <argument id="amount">
+                                    <value class="value" valueClass="decimal">8</value>
+                                  </argument>
+                                </value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Folder</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="136" title="Set Values: UpdatedStage">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">UpdatedStage</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="value" valueClass="string">Need Analysis</value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Folder</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="137" title="Set Values: UpdatedLeadSource">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">UpdatedLeadSource</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="value" valueClass="string">Partner</value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Test</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="141" title="Set Values: UpdatedTestMulti">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">UpdatedTestMulti</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="value" valueClass="string">Value3;Value4</value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Test</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="61" title="Create Opportunity from API">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Create Opportunity from API</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="62">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="142" title="Create Object: Opportunity=&gt;opportunityId">
+              <arguments>
+                <argument id="objectType">
+                  <value class="value" valueClass="string">Opportunity</value>
+                </argument>
+                <argument id="resultIdName">
+                  <value class="value" valueClass="string">opportunityId</value>
+                </argument>
+                <argument id="apexConnectionName">
+                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+                <argument id="Name">
+                  <value class="variable">
+                    <path element="OpportunityName"/>
+                  </value>
+                </argument>
+                <argument id="StageName">
+                  <value class="variable">
+                    <path element="Stage"/>
+                  </value>
+                </argument>
+                <argument id="CloseDate">
+                  <value class="variable">
+                    <path element="CloseDate"/>
+                  </value>
+                </argument>
+                <argument id="Description">
+                  <value class="variable">
+                    <path element="Description"/>
+                  </value>
+                </argument>
+                <argument id="Amount">
+                  <value class="variable">
+                    <path element="Amount"/>
+                  </value>
+                </argument>
+                <argument id="Type">
+                  <value class="variable">
+                    <path element="Type"/>
+                  </value>
+                </argument>
+                <argument id="LeadSource">
+                  <value class="variable">
+                    <path element="LeadSource"/>
+                  </value>
+                </argument>
+                <argument id="TestMulti__c">
+                  <value class="variable">
+                    <path element="TestMulti"/>
+                  </value>
+                </argument>
+              </arguments>
+              <parameterGeneratorProperties>
+                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Bank_RetailDepartment</propertyValue>
+                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Opportunity</propertyValue>
+              </parameterGeneratorProperties>
+              <generatedParameters>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Name" name="Name" title="Name"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=StageName" name="StageName" title="StageName"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=CloseDate" name="CloseDate" title="CloseDate"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Description" name="Description" title="Description"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Amount" name="Amount" title="Amount"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Type" name="Type" title="Type"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=LeadSource" name="LeadSource" title="LeadSource"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=TestMulti__c" name="TestMulti__c" title="TestMulti__c"/>
+              </generatedParameters>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="64" title="Verify Opportunity details after Opportunity Create">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Verify Opportunity details after Opportunity Create</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="65">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexReadObject" name="ApexReadObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.ReadCustomObjectTestStepCommand" testItemId="143" title="Read Object: Opportunity = {opportunityId}">
+              <arguments>
+                <argument id="objectType">
+                  <value class="value" valueClass="string">Opportunity</value>
+                </argument>
+                <argument id="resultName">
+                  <value class="value" valueClass="string">OpportunityRead</value>
+                </argument>
+                <argument id="apexConnectionName">
+                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                </argument>
+                <argument id="objectId">
+                  <value class="variable">
+                    <path element="opportunityId"/>
+                  </value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+              </arguments>
+              <resultAssertions>
+                <resultAssertion resultName="Name" title="Check Name">
+                  <expected class="variable">
+                    <path element="OpportunityName"/>
+                  </expected>
+                </resultAssertion>
+                <resultAssertion resultName="Description" title="Check Description">
+                  <expected class="variable">
+                    <path element="Description"/>
+                  </expected>
+                </resultAssertion>
+                <resultAssertion resultName="StageName" title="Check StageName">
+                  <expected class="variable">
+                    <path element="Stage"/>
+                  </expected>
+                </resultAssertion>
+                <resultAssertion resultName="Amount" title="Check Amount">
+                  <expected class="variable">
+                    <path element="Amount"/>
+                  </expected>
+                </resultAssertion>
+                <resultAssertion resultName="CloseDate" title="Check CloseDate">
+                  <expected class="variable">
+                    <path element="CloseDate"/>
+                  </expected>
+                </resultAssertion>
+                <resultAssertion resultName="Type" title="Check Type">
+                  <expected class="variable">
+                    <path element="Type"/>
+                  </expected>
+                </resultAssertion>
+                <resultAssertion resultName="LeadSource" title="Check LeadSource">
+                  <expected class="variable">
+                    <path element="LeadSource"/>
+                  </expected>
+                </resultAssertion>
+                <resultAssertion resultName="TestMulti__c" title="Check TestMulti__c">
+                  <expected class="variable">
+                    <path element="TestMulti"/>
+                  </expected>
+                </resultAssertion>
+              </resultAssertions>
+              <parameterGeneratorProperties>
+                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.ReadCustomObjectTestStepCommand.ConnectionName">Bank_RetailDepartment</propertyValue>
+                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.ReadCustomObjectTestStepCommand.CustomObjectName">Opportunity</propertyValue>
+              </parameterGeneratorProperties>
+              <generatedParameters>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Name" name="Name" title="Name"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Description" name="Description" title="Description"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=StageName" name="StageName" title="Stage"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Amount" name="Amount" title="Amount"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=CloseDate" name="CloseDate" title="Close Date"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Type" name="Type" title="Opportunity Type"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=LeadSource" name="LeadSource" title="Lead Source"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=TestMulti__c" name="TestMulti__c" title="TestMulti"/>
+              </generatedParameters>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="67" title="Update Opportunity from API">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Update Opportunity from API</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="68">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexUpdateObject" name="ApexUpdateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.UpdateCustomObjectTestStepCommand" testItemId="144" title="Update Object: Opportunity = {opportunityId}">
+              <arguments>
+                <argument id="objectType">
+                  <value class="value" valueClass="string">Opportunity</value>
+                </argument>
+                <argument id="resultName">
+                  <value class="value" valueClass="string">OpportunityUpdated</value>
+                </argument>
+                <argument id="apexConnectionName">
+                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                </argument>
+                <argument id="objectId">
+                  <value class="variable">
+                    <path element="opportunityId"/>
+                  </value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+                <argument id="CloseDate">
+                  <value class="variable">
+                    <path element="UpdatedCloseDate"/>
+                  </value>
+                </argument>
+                <argument id="StageName">
+                  <value class="variable">
+                    <path element="UpdatedStage"/>
+                  </value>
+                </argument>
+                <argument id="LeadSource">
+                  <value class="variable">
+                    <path element="UpdatedLeadSource"/>
+                  </value>
+                </argument>
+                <argument id="TestMulti__c">
+                  <value class="variable">
+                    <path element="UpdatedTestMulti"/>
+                  </value>
+                </argument>
+              </arguments>
+              <parameterGeneratorProperties>
+                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UpdateCustomObjectTestStepCommand.ConnectionName">Bank_RetailDepartment</propertyValue>
+                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UpdateCustomObjectTestStepCommand.CustomObjectName">Opportunity</propertyValue>
+              </parameterGeneratorProperties>
+              <generatedParameters>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=CloseDate" name="CloseDate" title="CloseDate"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=StageName" name="StageName" title="StageName"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=LeadSource" name="LeadSource" title="LeadSource"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=TestMulti__c" name="TestMulti__c" title="TestMulti__c"/>
+              </generatedParameters>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="70" title="Verify Opportunity details after Opportunity Update">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Verify Opportunity details after Opportunity Update</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="71">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexReadObject" name="ApexReadObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.ReadCustomObjectTestStepCommand" testItemId="145" title="Read Object: Opportunity = {opportunityId}">
+              <arguments>
+                <argument id="objectType">
+                  <value class="value" valueClass="string">Opportunity</value>
+                </argument>
+                <argument id="resultName">
+                  <value class="value" valueClass="string">OpportunityRead</value>
+                </argument>
+                <argument id="apexConnectionName">
+                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                </argument>
+                <argument id="objectId">
+                  <value class="variable">
+                    <path element="opportunityId"/>
+                  </value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+              </arguments>
+              <resultAssertions>
+                <resultAssertion resultName="Name" title="Check Name">
+                  <expected class="variable">
+                    <path element="OpportunityName"/>
+                  </expected>
+                </resultAssertion>
+                <resultAssertion resultName="Description" title="Check Description">
+                  <expected class="variable">
+                    <path element="Description"/>
+                  </expected>
+                </resultAssertion>
+                <resultAssertion resultName="StageName" title="Check StageName">
+                  <expected class="variable">
+                    <path element="UpdatedStage"/>
+                  </expected>
+                </resultAssertion>
+                <resultAssertion resultName="Amount" title="Check Amount">
+                  <expected class="variable">
+                    <path element="Amount"/>
+                  </expected>
+                </resultAssertion>
+                <resultAssertion resultName="CloseDate" title="Check CloseDate">
+                  <expected class="variable">
+                    <path element="UpdatedCloseDate"/>
+                  </expected>
+                </resultAssertion>
+                <resultAssertion resultName="Type" title="Check Type">
+                  <expected class="variable">
+                    <path element="Type"/>
+                  </expected>
+                </resultAssertion>
+                <resultAssertion resultName="LeadSource" title="Check LeadSource">
+                  <expected class="variable">
+                    <path element="UpdatedLeadSource"/>
+                  </expected>
+                </resultAssertion>
+                <resultAssertion resultName="TestMulti__c" title="Check TestMulti__c">
+                  <expected class="variable">
+                    <path element="UpdatedTestMulti"/>
+                  </expected>
+                </resultAssertion>
+              </resultAssertions>
+              <parameterGeneratorProperties>
+                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.ReadCustomObjectTestStepCommand.ConnectionName">Bank_RetailDepartment</propertyValue>
+                <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.ReadCustomObjectTestStepCommand.CustomObjectName">Opportunity</propertyValue>
+              </parameterGeneratorProperties>
+              <generatedParameters>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Name" name="Name" title="Name"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Description" name="Description" title="Description"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=StageName" name="StageName" title="Stage"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Amount" name="Amount" title="Amount"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=CloseDate" name="CloseDate" title="Close Date"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Type" name="Type" title="Opportunity Type"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=LeadSource" name="LeadSource" title="Lead Source"/>
+                <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=TestMulti__c" name="TestMulti__c" title="TestMulti"/>
+              </generatedParameters>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="73" title="Delete Opportunity from API">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Delete Opportunity from API</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="74">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexDeleteObject" name="ApexDeleteObject" testItemId="130" title="Delete Object: {opportunityId}">
+              <arguments>
+                <argument id="apexConnectionName">
+                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                </argument>
+                <argument id="objectId">
+                  <value class="variable">
+                    <path element="opportunityId"/>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="76" title="Verify Opportunity is Deleted">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Verify Opportunity is Deleted</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="77">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" name="ApexSoqlQuery" testItemId="45" title="SOQL Query: select Id from Lead where Id = '{opportunityId}'=&gt;opportunityCount">
+              <arguments>
+                <argument id="soqlQuery">
+                  <value class="compound">
+                    <parts>
+                      <value valueClass="string">select Id from Lead where Id = '</value>
+                      <variable>
+                        <path element="opportunityId"/>
+                      </variable>
+                      <value valueClass="string">'</value>
+                    </parts>
+                  </value>
+                </argument>
+                <argument id="apexConnectionName">
+                  <value class="value" valueClass="string">Bank_RetailDepartment</value>
+                </argument>
+                <argument id="resultListName">
+                  <value class="value" valueClass="string">opportunityCount</value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="46" title="Assert: {Count($opportunityCount)} EqualTo 0">
+              <arguments>
+                <argument id="expectedValue">
+                  <value class="funcCall" id="Count">
+                    <argument id="value">
+                      <value class="variable" topLevel="true">
+                        <path element="opportunityCount"/>
+                      </value>
+                    </argument>
+                  </value>
+                </argument>
+                <argument id="actualValue">
+                  <value class="value" valueClass="string">0</value>
+                </argument>
+                <argument id="comparisonType">
+                  <value class="value" valueClass="string">EqualTo</value>
+                </argument>
+                <argument id="caseSensitive">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="retainDecimals">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="nullGreater">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="matchMultiLine">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="matchDotAll">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="failureMessage">
+                  <value class="value" valueClass="string">Fail - Opportunity is not deleted</value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+  </steps>
+  <tags/>
+</testCase>

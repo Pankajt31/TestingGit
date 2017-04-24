@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="35">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.db.DbConnect" name="DbConnect" testItemId="5" title="DB Connect: SFDC_TESTConnection">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">OracleDatabase</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">SFDC_TESTConnection</value>
+        </argument>
+        <argument id="autoCommit">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="ifAlreadyOpen">
+          <value class="value" valueClass="string">Reopen</value>
+        </argument>
+        <argument id="commitBehaviour">
+          <value class="value" valueClass="string">CommitIfSuccessful</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.db.DbUpdate" name="DbUpdate" parameterGeneratorUri="command:com.provar.eclipse.ui.handlers.connection.DbUpdateTestStepCommand" testItemId="7" title="DB Update: SFDC_TESTConnection.ACCOUNT">
+      <arguments>
+        <argument id="dbConnectionName">
+          <value class="value" valueClass="string">SFDC_TESTConnection</value>
+        </argument>
+        <argument id="tableName">
+          <value class="value" valueClass="string">ACCOUNT</value>
+        </argument>
+        <argument id="where__ACCOUNT_NAME">
+          <value class="value" valueClass="string">Provartest02</value>
+        </argument>
+        <argument id="BILLING_CITY">
+          <value class="value" valueClass="string">test</value>
+        </argument>
+        <argument id="PHONE">
+          <value class="value" valueClass="string">000999</value>
+        </argument>
+      </arguments>
+      <parameterValueSources/>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.eclipse.ui.handlers.connection.DbUpdateTestStepCommand.ConnectionName">GGN_ORCL1</propertyValue>
+        <propertyValue name="com.provar.eclipse.ui.handlers.connection.DbUpdateTestStepCommand.TableName">ACCOUNT</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="wherecolumns" name="where__ACCOUNT_NAME" title="ACCOUNT_NAME">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="updatecolumns" name="BILLING_CITY" title="BILLING_CITY">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="updatecolumns" name="PHONE" title="PHONE">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+  <tags/>
+</testCase>

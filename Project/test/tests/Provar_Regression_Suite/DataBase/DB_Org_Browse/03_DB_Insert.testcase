@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="15">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.db.DbConnect" name="DbConnect" testItemId="1" title="DB Connect: DbConnection4">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">OracleDatabase</value>
+        </argument>
+        <argument id="autoCommit">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="ifAlreadyOpen">
+          <value class="value" valueClass="string">Reopen</value>
+        </argument>
+        <argument id="commitBehaviour">
+          <value class="value" valueClass="string">CommitIfSuccessful</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">DbConnection4</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Global</value>
+        </argument>
+      </arguments>
+      <parameterValueSources/>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.db.DbInsert" name="DbInsert" parameterGeneratorUri="command:com.provar.eclipse.ui.handlers.connection.DbInsertTestStepCommand" testItemId="3" title="DB Insert: DbConnection4.ACCOUNT=&gt;OracleDatabaseInsertedId">
+      <arguments>
+        <argument id="dbConnectionName">
+          <value class="value" valueClass="string">DbConnection4</value>
+        </argument>
+        <argument id="tableName">
+          <value class="value" valueClass="string">ACCOUNT</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">OracleDatabaseInsertedId</value>
+        </argument>
+        <argument id="ACCOUNT_NAME">
+          <value class="variable">
+            <path element="AccountName"/>
+          </value>
+        </argument>
+        <argument id="BILLING_CITY">
+          <value class="value" valueClass="string">BillingCity</value>
+        </argument>
+        <argument id="PHONE">
+          <value class="variable">
+            <path element="Phone"/>
+          </value>
+        </argument>
+        <argument id="TYPE">
+          <value class="variable">
+            <path element="Type"/>
+          </value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.eclipse.ui.handlers.connection.DbInsertTestStepCommand.ConnectionName">OracleDatabase</propertyValue>
+        <propertyValue name="com.provar.eclipse.ui.handlers.connection.DbInsertTestStepCommand.TableName">ACCOUNT</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="resultcolumns" name="ACCOUNT_NAME" title="ACCOUNT_NAME">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="resultcolumns" name="BILLING_CITY" title="BILLING_CITY">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="resultcolumns" name="PHONE" title="PHONE">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="resultcolumns" name="TYPE" title="TYPE">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+  <tags>
+    <string>disabled</string>
+  </tags>
+</testCase>

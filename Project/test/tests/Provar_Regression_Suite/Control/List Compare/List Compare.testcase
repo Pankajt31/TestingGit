@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="29">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="2" title="Set Values: ">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+      </arguments>
+      <parameterValueSources>
+        <parameterValueSource url="excel:templates/ListCompare1.xlsx?worksheet=Sheet1&amp;range=A1%3AC4&amp;namesLocation=FirstRowOfRange&amp;whereComparison=EqualTo" variableName="ExcelData1" variableScope="Test">
+          <cacheToken>C:/Users/new user/Desktop/Data/Regression_Pack/ws/1.7.0.15_31_July/test/templates/ListCompare1.xlsx;1439292923096</cacheToken>
+          <cachedParameters>
+            <apiParam name="RowNumber"/>
+            <apiParam name="FirstName"/>
+            <apiParam name="MiddleName"/>
+            <apiParam name="LastName"/>
+          </cachedParameters>
+        </parameterValueSource>
+        <parameterValueSource url="excel:templates/ListCompare2.xlsx?worksheet=Sheet1&amp;range=A1%3AC4&amp;namesLocation=FirstRowOfRange&amp;whereComparison=EqualTo" variableName="ExcelData2" variableScope="Test">
+          <cacheToken>C:/Users/new user/Desktop/Data/Regression_Pack/ws/1.7.0.15_31_July/test/templates/ListCompare2.xlsx;1439293222470</cacheToken>
+          <cachedParameters>
+            <apiParam name="RowNumber"/>
+            <apiParam name="FirstName"/>
+            <apiParam name="MiddleName"/>
+            <apiParam name="LastName"/>
+          </cachedParameters>
+        </parameterValueSource>
+      </parameterValueSources>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.list.ListCompare" name="ListCompare" testItemId="1" title="Compare: {ExcelData1}=&gt;{ExcelData2}">
+      <arguments>
+        <argument id="list1">
+          <value class="variable">
+            <path element="ExcelData1"/>
+          </value>
+        </argument>
+        <argument id="list2">
+          <value class="variable">
+            <path element="ExcelData2"/>
+          </value>
+        </argument>
+        <argument id="matchColumns">
+          <value class="value" valueClass="string">FirstName</value>
+        </argument>
+        <argument id="compareColumns">
+          <value class="value" valueClass="string">FirstName</value>
+        </argument>
+        <argument id="ignoreColumns"/>
+        <argument id="differenceHandling">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="unmatched1Handling">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="unmatched2Handling">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="caseInsensitive">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+      </arguments>
+      <parameterValueSources/>
+    </apiCall>
+  </steps>
+  <tags/>
+</testCase>

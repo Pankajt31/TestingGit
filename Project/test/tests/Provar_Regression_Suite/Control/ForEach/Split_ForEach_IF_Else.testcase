@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="3">
+  <summary>undefined</summary>
+  <remarks>&lt;p&gt;This is a negative test&lt;/p&gt;\n&lt;p&gt;This test itemized list values with 'Continue on failure' option checked&lt;/p&gt;\n&lt;p&gt;&lt;br /&gt;and failing test inside foreach loop&lt;/p&gt;</remarks>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Split" name="Split" testItemId="1" title="Split: templates/Split_SemiColon.txt=&gt;,=&gt;Tokens">
+      <arguments>
+        <argument id="input">
+          <value class="template">templates/Split_SemiColon.txt</value>
+        </argument>
+        <argument id="separator">
+          <value class="value" valueClass="string">,</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Tokens</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" name="ForEach" testItemId="2" title="For Each: {Tokens}=&gt;var">
+      <arguments>
+        <argument id="list">
+          <value class="variable">
+            <path element="Tokens"/>
+          </value>
+        </argument>
+        <argument id="fromItem">
+          <value class="value" valueClass="decimal">1</value>
+        </argument>
+        <argument id="valueName">
+          <value class="value" valueClass="string">var</value>
+        </argument>
+        <argument id="continueOnFailure">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="3">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.If" name="If" testItemId="4" title="If: {var = &quot;two&quot;}">
+              <arguments>
+                <argument id="condition">
+                  <value class="eq">
+                    <lhs class="variable">
+                      <path element="var"/>
+                    </lhs>
+                    <rhs class="value" valueClass="string">two</rhs>
+                  </value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="then" testItemId="5">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.Fail" name="Fail" testItemId="7" title="Fail Test: Value is Two, failing this test">
+                      <arguments>
+                        <argument id="message">
+                          <value class="value" valueClass="string">Value is Two, failing this test</value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                  </steps>
+                </clause>
+                <clause name="else" testItemId="10">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="8" title="Set Values: val">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList">
+                            <namedValues>
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">val</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="variable">
+                                  <path element="var"/>
+                                </value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Test</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="9" title="Set Values: Result">
+      <arguments>
+        <argument id="values">
+          <value class="valueList">
+            <namedValues>
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">Result</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="value" valueClass="string">Pass</value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+  <tags/>
+</testCase>

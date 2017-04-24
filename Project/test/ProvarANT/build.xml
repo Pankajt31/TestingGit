@@ -1,0 +1,29 @@
+<project default="runtests" xmlns:provar="antlib:com.provar.testrunner.ant">
+	<property environment="env"/>
+	<property name="provar.home" value="${env.PROVAR_HOME}"/>
+	<property name="testproject.home" value=".."/>
+	<property name="testproject.results" value="${testproject.home}\Results"/>
+
+	<target name="runtests">
+	
+		<provar:compile
+				provarHome="${provar.home}"
+				projectPath="${testproject.home}"  includeDestClasses="false"
+			/>
+	
+		<provar:run
+			provarHome="${provar.home}"
+			projectPath="${testproject.home}"
+			resultsPath="${testproject.results}"
+			testEnvironment="default"
+			webBrowserConfiguration="Full Screen"
+			webBrowser="Chrome"
+	  		>
+			
+			<fileset dir="${testproject.home}\tests\Provar_Regression_Suite" includes="**\*.*">
+			<exclude name=""/>
+			</fileset>
+			<pluginProperties plugin="sf" maxMemory="1500"/>
+		</provar:run>
+	</target>
+</project>

@@ -1,0 +1,37 @@
+<project default="runtests">
+	<property environment="env"/>
+	<property name="provar.home" value="C:/Program Files/Provar/"/>
+	<property name="testproject.home" value=".."/>
+	<property name="testproject.results" value="../ANT/Results"/>
+	
+	<taskdef name="Provar-Compile" classname="com.provar.testrunner.ant.CompileTask" classpath="${provar.home}/ant/ant-provar.jar"/>
+	<taskdef name="Run-Test-Case" classname="com.provar.testrunner.ant.RunnerTask" classpath="${provar.home}/ant/ant-provar.jar;${provar.home}/ant/ant-provar-bundled.jar;${provar.home}/ant/ant-provar-sf.jar"/>
+	<taskdef name="Test-Cycle-Report" classname="com.provar.testrunner.ant.TestCycleReportTask" classpath="${provar.home}/ant/ant-provar.jar;${provar.home}/ant/ant-provar-bundled.jar;${provar.home}/ant/ant-provar-sf.jar"/>
+	
+	<target name="runtests">
+	
+		<Provar-Compile provarHome="${provar.home}" projectPath="${testproject.home}"/>
+	
+		<Run-Test-Case provarHome="${provar.home}" 
+				projectPath="${testproject.home}" 
+				resultsPath="${testproject.results}" 
+				resultsPathDisposition="Increment" 
+				testEnvironment="Lightning" 
+				webBrowser="Chrome" 
+				webBrowserConfiguration="Full Screen" 
+				excludeCallableTestCases="true" 
+				salesforceMetadataCache="Reload" 
+				projectCachePath="../../.provarCaches" 
+				testOutputlevel="WARNING" 
+				pluginOutputlevel="WARNING"
+				invokeTestRunMonitor="true"
+				>
+		
+			<fileset dir="../tests/Provar_Regression_Suite"></fileset>
+
+			<emailProperties sendEmail="true" primaryRecipients="pankaj.tiwari@provartesting.com,neha.arora@provartesting.com,mohit.gupta@provartesting.com,piyush.srivastav@provartesting.com,sudarshan.singh@provartesting.com,harpreet.bedi@provartesting.com,chuba.walling@provartesting.com,himanshu@provartesting.com,charanjeet.gill@provartesting.com,ashish.yadav@provartesting.com,vikas.wig@provartesting.com,saurabh.tiwari@provartesting.com,latika.jamnal@provartesting.com,sowjanya.kotha@provartesting.com,ravindra.yadav@provartesting.com,geraint.waters@provartesting.com,paul.noffke@provartesting.com,ashutosh.sharma@provartesting.com,ashish.kumar@provartesting.com,aman.gupta@provartesting.com,charanjeet.gill@provartesting.com,diksha.sachdeva@provartesting.com,rahul.tyagi@provartesting.com,aaditya.dhar@provartesting.com,aman.gupta@provartesting.com,ashish.yadav@provartesting.com" ccRecipients="" bccRecipients="" emailSubject="Lightning Report" attachExecutionReport="true" attachZip="true"/>
+			<attachmentProperties includeOnlyFailures="false" includeTestCaseDescription="true" includeScreenshots="true" includeWarningMessages="false" includeInfoMessages="true" includeDebugMessages="false"/>
+		</Run-Test-Case>
+
+	</target>
+</project>

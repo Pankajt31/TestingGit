@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="0">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="29" title="Set Values: ">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+      </arguments>
+      <parameterValueSources>
+        <parameterValueSource url="excel:templates/SharingSettings.xlsx?worksheet=Sheet0&amp;range=A1%3AW3&amp;namesLocation=FirstRowOfRange&amp;whereComparison=EqualTo" variableName="Gr_TestCases" variableScope="Test">
+          <cacheToken>E:\\Regression\\Regression_18Aug15\\test\\templates\\SharingSettings.xlsx;1441694850634</cacheToken>
+          <cachedParameters>
+            <apiParam name="RowNumber"/>
+            <apiParam name="TestCase"/>
+            <apiParam name="SourceOrg"/>
+            <apiParam name="CreatedBy"/>
+            <apiParam name="Name"/>
+            <apiParam name="AccessLevel"/>
+            <apiParam name="OrgName"/>
+            <apiParam name="EnableCustomer"/>
+            <apiParam name="Type"/>
+            <apiParam name="TestCaseType"/>
+            <apiParam name="Action"/>
+            <apiParam name="Parent"/>
+            <apiParam name="Message"/>
+            <apiParam name="Attachment"/>
+            <apiParam name="FeedType"/>
+            <apiParam name="Title"/>
+            <apiParam name="LinkURL"/>
+            <apiParam name="PollOptions"/>
+            <apiParam name="VoteChoice"/>
+            <apiParam name="Recipient"/>
+            <apiParam name="WorkThanksMessage"/>
+            <apiParam name="BadgeName"/>
+            <apiParam name="ManualTestCase_ID"/>
+            <apiParam name="Scenario"/>
+          </cachedParameters>
+        </parameterValueSource>
+      </parameterValueSources>
+    </apiCall>
+    <caseCall testCaseId="ab79fbbe-64fc-44c0-8ca7-823eeafc0ec1" testItemId="30">
+      <arguments>
+        <argument id="Gr_TestCases">
+          <value class="variable">
+            <path element="Gr_TestCases">
+              <filter class="conditionFilter">
+                <condition class="eq">
+                  <lhs class="variable">
+                    <path element="AccessLevel"/>
+                  </lhs>
+                  <rhs class="value" valueClass="string">Public</rhs>
+                </condition>
+              </filter>
+            </path>
+          </value>
+        </argument>
+      </arguments>
+    </caseCall>
+  </steps>
+  <tags/>
+</testCase>

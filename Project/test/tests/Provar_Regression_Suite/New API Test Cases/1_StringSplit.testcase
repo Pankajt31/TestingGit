@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="40">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="1" title="Set Values: VAL">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">VAL</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="value" valueClass="string">Ajay, Gunik, Aman, Aaditya, Saurabh, Latika, Neelam</value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Split" name="Split" testItemId="2" title="Split: {VAL}=&gt;, =&gt;Tokens">
+      <arguments>
+        <argument id="input">
+          <value class="variable">
+            <path element="VAL"/>
+          </value>
+        </argument>
+        <argument id="separator">
+          <value class="value" valueClass="string">, </value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Tokens</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Match" name="Match" testItemId="3" title="Match: {VAL}=&gt;[{Tokens}]=&gt;Match">
+      <arguments>
+        <argument id="input">
+          <value class="variable">
+            <path element="VAL"/>
+          </value>
+        </argument>
+        <argument id="regex">
+          <value class="compound">
+            <parts>
+              <value valueClass="string">[</value>
+              <variable>
+                <path element="Tokens"/>
+              </variable>
+              <value valueClass="string">]</value>
+            </parts>
+          </value>
+        </argument>
+        <argument id="caseInsensitive">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Match</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+</testCase>

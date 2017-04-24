@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testProject selectedBrowserConfigurationName="Full Screen" selectedEnvironment="Summer17">
+  <title>/test/.testproject</title>
+  <configPath>config</configPath>
+  <testsPath>tests</testsPath>
+  <templatesPath>templates</templatesPath>
+  <sourcePath>src</sourcePath>
+  <secureStoragePath>.secrets</secureStoragePath>
+  <browserDebugPort>0</browserDebugPort>
+  <environments>
+    <environment name="UAT">
+      <summary/>
+    </environment>
+    <environment name="env2">
+      <summary/>
+    </environment>
+    <environment name="test">
+      <summary/>
+    </environment>
+    <environment name="Lightning">
+      <summary/>
+    </environment>
+    <environment name="Production">
+      <summary/>
+    </environment>
+    <environment name="Summer17">
+      <summary/>
+    </environment>
+  </environments>
+  <variables>
+    <testVariable name="_pageLoadTimeout">
+      <valueType class="textType">
+        <constraints>
+          <valueConstraint name="minLength">0</valueConstraint>
+          <valueConstraint name="maxLength">9999</valueConstraint>
+          <valueConstraint name="regex"/>
+        </constraints>
+      </valueType>
+      <summary/>
+      <values>
+        <testVariableValue>
+          <value class="value" valueClass="string">180</value>
+        </testVariableValue>
+      </values>
+    </testVariable>
+    <testVariable name="_scriptTimeout ">
+      <valueType class="textType">
+        <constraints>
+          <valueConstraint name="minLength">0</valueConstraint>
+          <valueConstraint name="maxLength">9999</valueConstraint>
+          <valueConstraint name="regex"/>
+        </constraints>
+      </valueType>
+      <summary/>
+      <values>
+        <testVariableValue>
+          <value class="value" valueClass="string">99</value>
+        </testVariableValue>
+      </values>
+    </testVariable>
+    <testVariable name="_defaultWaitTimeout ">
+      <valueType class="textType">
+        <constraints>
+          <valueConstraint name="minLength">0</valueConstraint>
+          <valueConstraint name="maxLength">9999</valueConstraint>
+          <valueConstraint name="regex"/>
+        </constraints>
+      </valueType>
+      <summary/>
+      <values>
+        <testVariableValue>
+          <value class="value" valueClass="string">180</value>
+        </testVariableValue>
+      </values>
+    </testVariable>
+    <testVariable name="Lightning">
+      <valueType class="textType">
+        <constraints>
+          <valueConstraint name="minLength">0</valueConstraint>
+          <valueConstraint name="maxLength">9999</valueConstraint>
+          <valueConstraint name="regex"/>
+        </constraints>
+      </valueType>
+      <summary/>
+      <values>
+        <testVariableValue>
+          <value class="value" valueClass="string">false</value>
+        </testVariableValue>
+        <testVariableValue envName="Lightning">
+          <value class="value" valueClass="string">true</value>
+        </testVariableValue>
+      </values>
+    </testVariable>
+  </variables>
+  <connectionClasses>
+    <connectionClass name="sf">
+      <connections>
+        <connection name="Bank_RetailDepartment">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="8d426900-5706-4342-b2a2-733b0d3cdd1b" url="sf:user=admin1@test1.provar.com;password={password};environment=PROD_DEV"/>
+            <connectionUrl envName="Lightning" secureStorageNodeId="c274be4f-5b4d-4b7d-ae83-cfda071e1697" url="sf:user=admin1@test1.provar.com;password={password};environment=PROD_DEV;lightningMode=true"/>
+            <connectionUrl envName="Production" secureStorageNodeId="cdc57ff0-6d00-418e-9c59-b64985e6a698" url="sf:user=admin1@test.provar.com;password={password};environment=PROD_DEV"/>
+            <connectionUrl envName="Summer17" secureStorageNodeId="fce9e41e-48fc-46b1-be43-b8d0c21c59f0" url="sf:user=vikas.wig-8jmk@force.com;password={password};environment=PROD_DEV"/>
+          </connectionUrls>
+        </connection>
+        <connection name="testing1">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="ad18dd56-a6bd-4633-a6ba-5d1c1af5bd99" url="sf:user=regression1@testing.com;password={password};environment=PROD_DEV"/>
+            <connectionUrl envName="Lightning" secureStorageNodeId="7378a26f-a6a7-4600-a75e-4e6fc84daf7f" url="sf:user=regression1@testing.com;password={password};environment=PROD_DEV;lightningMode=true"/>
+            <connectionUrl envName="Production" secureStorageNodeId="acfff3c1-edbe-4c2d-99b9-d06c499c3ea3" url="sf:user=regression1@testing.com;password={password};environment=PROD_DEV"/>
+            <connectionUrl envName="Summer17" secureStorageNodeId="2d6ccce7-b2f4-4c6a-91a9-e20a619aefda" url="sf:user=regression1@testing.com;password={password};environment=PROD_DEV"/>
+          </connectionUrls>
+        </connection>
+        <connection name="testing2">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="744e7320-17bb-4f39-b7a0-a404b7de1760" url="sf:user=regression2@testing.com;password={password};environment=PROD_DEV"/>
+            <connectionUrl envName="Lightning" secureStorageNodeId="c3aab3f7-863c-43cb-8803-17ccaba0d7b7" url="sf:user=regression2@testing.com;password={password};environment=PROD_DEV;lightningMode=true"/>
+            <connectionUrl envName="Production" secureStorageNodeId="a19220bd-5616-4bde-b6d7-dc3dd0e7dc56" url="sf:user=regression2@testing.com;password={password};environment=PROD_DEV"/>
+            <connectionUrl envName="Summer17" secureStorageNodeId="a7e078ed-67c8-48c7-b4b4-66a3e3f6dff9" url="sf:user=regression2@testing.com;password={password};environment=PROD_DEV"/>
+          </connectionUrls>
+        </connection>
+        <connection name="testing3">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="5cecf382-a899-4e01-b983-e443a1dde5cf" url="sf:user=regression3@testing.com;password={password};environment=PROD_DEV"/>
+            <connectionUrl envName="Lightning" secureStorageNodeId="3a59bdeb-53fb-408d-a299-4bb2fc328772" url="sf:user=regression3@testing.com;password={password};environment=PROD_DEV;lightningMode=true"/>
+            <connectionUrl envName="Production" secureStorageNodeId="3720f7a0-4a27-480e-8bd8-5a50da633b9e" url="sf:user=regression3@testing.com;password={password};environment=PROD_DEV"/>
+          </connectionUrls>
+        </connection>
+        <connection name="testing1_logon1">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="sf:user=test2@regressionuser.com;environment=PROD_DEV;logonAsConnection=testing1"/>
+            <connectionUrl envName="Lightning" url="sf:user=test2@regressionuser.com;environment=PROD_DEV;logonAsConnection=testing1;lightningMode=true"/>
+            <connectionUrl envName="Production" url="sf:user=test2@regressionuser.com;environment=PROD_DEV;logonAsConnection=testing1"/>
+            <connectionUrl envName="Summer17" url="sf:user=test2@regressionuser.com;environment=PROD_DEV;logonAsConnection=testing1"/>
+          </connectionUrls>
+        </connection>
+        <connection name="testing1_logon2">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="sf:user=test3@regressionuser.com;environment=PROD_DEV;logonAsConnection=testing1"/>
+            <connectionUrl envName="Lightning" url="sf:user=test3@regressionuser.com;environment=PROD_DEV;logonAsConnection=testing1;lightningMode=true"/>
+            <connectionUrl envName="Production" url="sf:user=test3@regressionuser.com;environment=PROD_DEV;logonAsConnection=testing1"/>
+            <connectionUrl envName="Summer17" url="sf:user=test3@regressionuser.com;environment=PROD_DEV;logonAsConnection=testing1"/>
+          </connectionUrls>
+        </connection>
+        <connection name="SIT_Logon1">
+          <summary>SIT_Logon1</summary>
+          <connectionUrls>
+            <connectionUrl url="sf:user=test@regressionuser.com;environment=PROD_DEV;logonAsConnection=Bank_RetailDepartment"/>
+            <connectionUrl envName="Lightning" url="sf:user=test@regressionuser.com;environment=PROD_DEV;logonAsConnection=Bank_RetailDepartment;lightningMode=true"/>
+            <connectionUrl envName="Production" url="sf:user=test@regressionuser1.com;environment=PROD_DEV;logonAsConnection=Bank_RetailDepartment"/>
+            <connectionUrl envName="Summer17" url="sf:user=test@regressionuser11.com;environment=PROD_DEV;logonAsConnection=Bank_RetailDepartment"/>
+          </connectionUrls>
+        </connection>
+        <connection name="SIT_Logon2">
+          <summary>SIT_Logon2</summary>
+          <connectionUrls>
+            <connectionUrl url="sf:user=test1@regressionuser.com;environment=PROD_DEV;logonAsConnection=Bank_RetailDepartment"/>
+            <connectionUrl envName="Lightning" url="sf:user=test1@regressionuser.com;environment=PROD_DEV;logonAsConnection=Bank_RetailDepartment;lightningMode=true"/>
+            <connectionUrl envName="Production" url="sf:user=test1@regressionuser11.com;environment=PROD_DEV;logonAsConnection=Bank_RetailDepartment"/>
+            <connectionUrl envName="Summer17" url="sf:user=test11@regressionuser11.com;environment=PROD_DEV;logonAsConnection=Bank_RetailDepartment"/>
+          </connectionUrls>
+        </connection>
+        <connection name="DF13">
+          <summary>DF13</summary>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="309be4e0-93e8-40ef-bc2c-019631f0f3e6" url="sf:user=df13@makepositive.com;password={password};environment=PROD_DEV;clientId=3MVG99qusVZJwhsm2lGdfFG60_7CpMlAsWhnylm55mw39qfZyeu3FfWevkhmWGSMCiKyE_jqbG0PvkHR_Gf58;clientSecret={clientSecret}"/>
+            <connectionUrl envName="Lightning" secureStorageNodeId="4dc076fe-8da9-4bc7-a177-64aabd8fc804" url="sf:user=df13@makepositive.com;password={password};environment=PROD_DEV;clientId=3MVG99qusVZJwhsm2lGdfFG60_7CpMlAsWhnylm55mw39qfZyeu3FfWevkhmWGSMCiKyE_jqbG0PvkHR_Gf58;clientSecret={clientSecret};lightningMode=true"/>
+            <connectionUrl envName="Production" secureStorageNodeId="93b0dde4-ec0e-4a03-af44-d233b1c764e8" url="sf:user=df13@makepositive.com;password={password};environment=PROD_DEV;clientId=3MVG99qusVZJwhsm2lGdfFG60_7CpMlAsWhnylm55mw39qfZyeu3FfWevkhmWGSMCiKyE_jqbG0PvkHR_Gf58;clientSecret={clientSecret}"/>
+            <connectionUrl envName="Summer17" secureStorageNodeId="c6d5b3b3-a7da-4cbd-b234-e78f685011bb" url="sf:user=df13@makepositive.com;password={password};environment=PROD_DEV;clientId=3MVG99qusVZJwhsm2lGdfFG60_7CpMlAsWhnylm55mw39qfZyeu3FfWevkhmWGSMCiKyE_jqbG0PvkHR_Gf58;clientSecret={clientSecret}"/>
+          </connectionUrls>
+        </connection>
+        <connection name="ComunityConnection">
+          <summary>ComunityConnection</summary>
+          <connectionUrls>
+            <connectionUrl url="sf:userType=COMMUNITIES;user=mohit.gupta@testing.com;environment=PROD_DEV;webBaseUrl=https://qaregressinpack.force.com/provarregtest;logonAsConnection=Bank_RetailDepartment;portal=Provar Regression Test"/>
+            <connectionUrl envName="Lightning" url="sf:userType=COMMUNITIES;user=mohit.gupta@testing.com;environment=PROD_DEV;webBaseUrl=https://qaregressinpack.force.com/provarregtest;logonAsConnection=Bank_RetailDepartment;portal=Provar Regression Test;lightningMode=true"/>
+            <connectionUrl envName="Production" url="sf:userType=COMMUNITIES;user=mohit.gupta@testing1.com;environment=PROD_DEV;webBaseUrl=https://qaregressinpack.force.com/provarregtest;logonAsConnection=Bank_RetailDepartment;portal=Provar Regression Test"/>
+            <connectionUrl envName="Summer17" url="sf:userType=COMMUNITIES;user=mohit.gupta@testing.com;environment=PROD_DEV;webBaseUrl=https://qaregressinpack.force.com/provarregtest;logonAsConnection=Bank_RetailDepartment;portal=Provar Regression Test"/>
+          </connectionUrls>
+        </connection>
+        <connection name="NamespacePrefix">
+          <summary>NamespacePrefix</summary>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="6b81ac4b-fc8c-434b-b9c3-cac1d66f025c" url="sf:user=regressionexternal2@gmail.com;password={password};environment=PROD_DEV"/>
+            <connectionUrl envName="Lightning" secureStorageNodeId="ba50723a-8d95-4d4c-9bc8-abc26f3e8e6c" url="sf:user=regressionexternal2@gmail.com;password={password};environment=PROD_DEV;lightningMode=true"/>
+            <connectionUrl envName="Production" secureStorageNodeId="89a46a45-54bd-40c4-afe4-f0cac19dfcc4" url="sf:user=regressionexternal2@gmail.com;password={password};environment=PROD_DEV"/>
+            <connectionUrl envName="Summer17" secureStorageNodeId="1773eee6-9887-49b0-8768-78589a99bebf" url="sf:user=regressionexternal2@gmail.com;password={password};environment=PROD_DEV"/>
+          </connectionUrls>
+        </connection>
+        <connection name="Summer17Prerelease">
+          <summary>Summer17 Pre-release</summary>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="b5827704-9c81-4328-9691-1ec917b62b24" url="sf:user=vikas.wig-8jmk@force.com;password={password};environment=PROD_DEV"/>
+          </connectionUrls>
+        </connection>
+        <connection name="ThreePanellayout">
+          <summary>3 Panel layout </summary>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="1691513d-ada3-42b1-819d-eb680f3b54d4" url="sf:user=regression.console@makepositive.com;password={password};environment=PROD_DEV"/>
+            <connectionUrl envName="Summer17" secureStorageNodeId="1416f748-d0ec-416d-9cce-c8d6f019d452" url="sf:user=vikas.wig-8jmk@force.com;password={password};environment=PROD_DEV"/>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+    <connectionClass name="google">
+      <connections>
+        <connection name="ProvarRegression1">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="aef14cc9-3530-4b9b-91f7-d3ebc4bdc88e" url="google:user=provarregressionpack1@gmail.com;password={password};authenticationType=PASSWORD;accessToken={accessToken};refreshToken={refreshToken};expiry=1443162820000;proxyHost=;proxyUser="/>
+          </connectionUrls>
+        </connection>
+        <connection name="ProvarRegression2">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="d21ca702-4ceb-44d2-a8e6-7b9c6aaf64f6" url="google:user=provarregressionpack2@gmail.com;accessToken={accessToken};refreshToken={refreshToken};expiry=1487929626664"/>
+          </connectionUrls>
+        </connection>
+        <connection name="ProvarRegression3">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="2d562332-8bb9-4b99-92d3-0d9f60c7b7ef" url="google:user=provarregressionpack3@gmail.com;accessToken={accessToken};refreshToken={refreshToken};expiry=1487929626668"/>
+          </connectionUrls>
+        </connection>
+        <connection name="ProvarRegression4">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="5489df18-e63e-41e8-b30d-fbdfabd94077" url="google:user=provarregressionpack4@gmail.com;accessToken={accessToken};refreshToken={refreshToken};expiry=1487929626652"/>
+          </connectionUrls>
+        </connection>
+        <connection name="Gmail">
+          <summary>Gmail</summary>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="34d0af77-90eb-4f2f-9139-eafb538afb46" url="google:user=testnimb13@gmail.com;accessToken={accessToken};refreshToken={refreshToken};expiry=1487929626660"/>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+    <connectionClass name="ui">
+      <connections>
+        <connection name="FaceBook">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="se:baseUrl=https://www.facebook.com"/>
+          </connectionUrls>
+        </connection>
+        <connection name="Amazon">
+          <summary>\t\t</summary>
+          <connectionUrls>
+            <connectionUrl url="se:baseUrl=http://www.amazon.in/"/>
+          </connectionUrls>
+        </connection>
+        <connection name="Yahoo">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="se:baseUrl=https://in.yahoo.com/?p=us"/>
+          </connectionUrls>
+        </connection>
+        <connection name="Twitter">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="se:baseUrl=http://www.twitter.com"/>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+    <connectionClass name="database">
+      <connections>
+        <connection name="GGN_ORCL1">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="b07b2374-d2ac-47ff-a59d-ed0782dcd488" url="jdbc:oracle:thin:PDB1/{password}@163.47.141.75:1521:xe"/>
+          </connectionUrls>
+        </connection>
+        <connection name="GGN_MSQL1">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="c7d4d3c0-85bc-479a-9d93-6e8740d609b5" url="jdbc:mysql://163.47.141.75:3306/test?schemaName=test&amp;user=GGN_MSQL1&amp;password={password}"/>
+          </connectionUrls>
+        </connection>
+        <connection name="Database">
+          <summary>Database</summary>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="6f7dd2fe-4c56-409d-a603-c67846d90602" url="jdbc:oracle:thin:PDB1/{password}@163.47.141.75:1521:xe"/>
+          </connectionUrls>
+        </connection>
+        <connection name="OracleDatabase">
+          <summary>OracleDatabase</summary>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="4ee74c21-b842-4c26-afb2-ef3f228f2932" url="jdbc:oracle:thin:PDB1/{password}@163.47.141.75:1521:xe"/>
+          </connectionUrls>
+        </connection>
+        <connection name="SQLSERVER">
+          <summary>SQL SERVER</summary>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="ad878ee1-2e3b-45f7-8718-415759269015" url="jdbc:sqlserver://163.47.141.75:1433;databaseName=TestDB;user=ProvarUser;password={password}"/>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+  </connectionClasses>
+  <tagTypes>
+    <tagType name="functionalarea" tagClass="functionalarea" title="Functional Area">
+      <summary>The functional area that a Test Item belongs to</summary>
+      <tags>
+        <tag name="gg">
+          <summary/>
+        </tag>
+      </tags>
+    </tagType>
+  </tagTypes>
+  <browserConfigurations>
+    <browserConfiguration adjustBrowserWidthForChromeIde="true" browserHeight="0" browserWidth="0" name="Full Screen">
+      <summary>Full screen with Test Authoring adjustment</summary>
+    </browserConfiguration>
+    <browserConfiguration browserHeight="768" browserHeightType="Pixels" browserWidth="1024" browserWidthType="Pixels" name="1024x768">
+      <summary>Fixed 1024x768</summary>
+    </browserConfiguration>
+    <browserConfiguration browserHeight="800" browserHeightType="Pixels" browserWidth="1280" browserWidthType="Pixels" name="1280x800">
+      <summary>Fixed 1280x800</summary>
+    </browserConfiguration>
+    <browserConfiguration browserHeight="768" browserHeightType="Pixels" browserWidth="1366" browserWidthType="Pixels" name="1366x768">
+      <summary>Fixed 1366x768</summary>
+    </browserConfiguration>
+    <browserConfiguration browserHeight="1080" browserHeightType="Pixels" browserWidth="1920" browserWidthType="Pixels" name="1920x1080">
+      <summary>Fixed 1920x1080</summary>
+    </browserConfiguration>
+    <browserConfiguration adjustBrowserWidthForChromeIde="true" browserHeight="500" browserHeightType="Pixels" browserWidth="3000" browserWidthType="Pixels" name="Test">
+      <summary/>
+    </browserConfiguration>
+    <browserConfiguration adjustBrowserWidthForChromeIde="true" browserHeight="1024" browserHeightType="Pixels" browserWidth="768" browserWidthType="Pixels" name="Testing1">
+      <summary/>
+    </browserConfiguration>
+  </browserConfigurations>
+  <antPath>ANT</antPath>
+</testProject>

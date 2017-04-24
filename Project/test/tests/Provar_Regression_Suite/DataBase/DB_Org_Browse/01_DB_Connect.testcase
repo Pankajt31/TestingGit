@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="1">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.db.DbConnect" name="DbConnect" testItemId="1" title="DB Connect: DbConnection1">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">OracleDatabase</value>
+        </argument>
+        <argument id="autoCommit">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="ifAlreadyOpen">
+          <value class="value" valueClass="string">Reuse</value>
+        </argument>
+        <argument id="commitBehaviour">
+          <value class="value" valueClass="string">CommitIfSuccessful</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">DbConnection1</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Global</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.db.DbRead" name="DbRead" parameterGeneratorUri="command:com.provar.eclipse.ui.handlers.connection.DbReadTestStepCommand" testItemId="3" title="DB Read: DbConnection1.ACCOUNT=&gt;SFDC_TESTRead">
+      <arguments>
+        <argument id="dbConnectionName">
+          <value class="value" valueClass="string">DbConnection1</value>
+        </argument>
+        <argument id="tableName">
+          <value class="value" valueClass="string">ACCOUNT</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">SFDC_TESTRead</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="where__PHONE">
+          <value class="value" valueClass="string">999999999</value>
+        </argument>
+      </arguments>
+      <resultAssertions>
+        <resultAssertion resultName="PHONE" title="Check PHONE">
+          <expected class="value" valueClass="string">999999999</expected>
+        </resultAssertion>
+      </resultAssertions>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.eclipse.ui.handlers.connection.DbReadTestStepCommand.ConnectionName">SFDC_TEST</propertyValue>
+        <propertyValue name="com.provar.eclipse.ui.handlers.connection.DbReadTestStepCommand.TableName">ACCOUNT</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="wherecolumns" name="where__PHONE" title="PHONE">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="resultcolumns" name="PHONE" title="PHONE">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+  <tags>
+    <string>disabled</string>
+  </tags>
+</testCase>

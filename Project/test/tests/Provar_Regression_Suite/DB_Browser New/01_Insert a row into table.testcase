@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="32">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.db.DbConnect" name="DbConnect" testItemId="4" title="DB Connect: SFDC_TESTConnection">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">OracleDatabase</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">SFDC_TESTConnection</value>
+        </argument>
+        <argument id="autoCommit">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="ifAlreadyOpen">
+          <value class="value" valueClass="string">Reuse</value>
+        </argument>
+        <argument id="commitBehaviour">
+          <value class="value" valueClass="string">CommitIfSuccessful</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.db.DbInsert" name="DbInsert" parameterGeneratorUri="command:com.provar.eclipse.ui.handlers.connection.DbInsertTestStepCommand" testItemId="6" title="DB Insert: SFDC_TESTConnection.ACCOUNT=&gt;GGN_ORCL1InsertedId">
+      <arguments>
+        <argument id="dbConnectionName">
+          <value class="value" valueClass="string">SFDC_TESTConnection</value>
+        </argument>
+        <argument id="tableName">
+          <value class="value" valueClass="string">ACCOUNT</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">GGN_ORCL1InsertedId</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="ACCOUNT_NAME">
+          <value class="value" valueClass="string">Account01</value>
+        </argument>
+        <argument id="BILLING_CITY">
+          <value class="value" valueClass="string">AccountCity</value>
+        </argument>
+        <argument id="PHONE">
+          <value class="value" valueClass="string">999999999</value>
+        </argument>
+        <argument id="TYPE">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.eclipse.ui.handlers.connection.DbInsertTestStepCommand.ConnectionName">GGN_ORCL1</propertyValue>
+        <propertyValue name="com.provar.eclipse.ui.handlers.connection.DbInsertTestStepCommand.TableName">ACCOUNT</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="resultcolumns" name="ACCOUNT_NAME" title="ACCOUNT_NAME">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="resultcolumns" name="BILLING_CITY" title="BILLING_CITY">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="resultcolumns" name="PHONE" title="PHONE">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="resultcolumns" name="TYPE" title="TYPE">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+  <tags/>
+</testCase>

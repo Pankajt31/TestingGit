@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase>
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="1" title="Set Values: VAL">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">VAL</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="value" valueClass="string">Ajay, Gunik, Aman, Aaditya, Saurabh, Latika, Neelam</value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Replace" name="Replace" testItemId="2" title="Replace: {VAL}=&gt;=&gt;Rep1">
+      <arguments>
+        <argument id="input">
+          <value class="variable">
+            <path element="VAL"/>
+          </value>
+        </argument>
+        <argument id="find">
+          <value class="value" valueClass="string">Latika</value>
+        </argument>
+        <argument id="replacement">
+          <value class="value" valueClass="string">CJ</value>
+        </argument>
+        <argument id="caseInsensitive">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Rep1</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Replace" name="Replace" testItemId="3" title="Replace: {VAL}=&gt;=&gt;Rep2">
+      <arguments>
+        <argument id="input">
+          <value class="variable">
+            <path element="VAL"/>
+          </value>
+        </argument>
+        <argument id="find">
+          <value class="value" valueClass="string">Neelam</value>
+        </argument>
+        <argument id="replacement">
+          <value class="value" valueClass="string">Mohit</value>
+        </argument>
+        <argument id="caseInsensitive"/>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Rep2</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Replace" name="Replace" testItemId="4" title="Replace: {VAL}=&gt;=&gt;Rep3">
+      <arguments>
+        <argument id="input">
+          <value class="variable">
+            <path element="VAL"/>
+          </value>
+        </argument>
+        <argument id="find">
+          <value class="value" valueClass="string">Abhay</value>
+        </argument>
+        <argument id="replacement">
+          <value class="value" valueClass="string">Jay</value>
+        </argument>
+        <argument id="caseInsensitive"/>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Rep3</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+</testCase>

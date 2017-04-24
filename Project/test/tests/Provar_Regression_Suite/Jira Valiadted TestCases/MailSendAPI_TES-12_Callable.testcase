@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="12" registryId="8ccb70d4-8ef0-47ac-8416-35a26f58e69d" visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.messaging.SendMessage" name="SendMessage" testItemId="1" title="Send Message: Gmail">
+      <arguments>
+        <argument id="destinationConnectionName">
+          <value class="value" valueClass="string">Gmail</value>
+        </argument>
+        <argument id="body">
+          <value class="value" valueClass="string">Hi. Message from callable.</value>
+        </argument>
+        <argument id="payloadFormat">
+          <value class="value" valueClass="string">Auto</value>
+        </argument>
+        <argument id="attachments">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="filePath">
+                <value class="url">templates/Book1.xlsx</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+        <argument id="to">
+          <value class="value" valueClass="string">aman.gupta@provartesting.com</value>
+        </argument>
+        <argument id="cc"/>
+        <argument id="bcc"/>
+        <argument id="subject">
+          <value class="value" valueClass="string">Callable API test</value>
+        </argument>
+        <argument id="signature">
+          <value class="value" valueClass="string">TES-12</value>
+        </argument>
+      </arguments>
+      <parameterValueSources/>
+      <generatedParameters>
+        <param group="destination" linkedToUrl="connectionParam:destinationConnectionName" mandatory="true" name="to" title="To">
+          <type>
+            <textType/>
+          </type>
+        </param>
+        <param group="destination" linkedToUrl="connectionParam:destinationConnectionName" name="cc" title="CC">
+          <type>
+            <textType/>
+          </type>
+        </param>
+        <param group="destination" linkedToUrl="connectionParam:destinationConnectionName" name="bcc" title="BCC">
+          <type>
+            <textType/>
+          </type>
+        </param>
+        <param group="payload" linkedToUrl="connectionParam:destinationConnectionName" name="subject" title="Subject">
+          <type>
+            <textType/>
+          </type>
+        </param>
+        <param group="payload" linkedToUrl="connectionParam:destinationConnectionName" name="signature" title="Signature">
+          <type>
+            <textType/>
+          </type>
+        </param>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+  <parameterValueSources/>
+</testCase>

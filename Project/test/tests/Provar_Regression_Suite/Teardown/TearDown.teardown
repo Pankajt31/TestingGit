@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase>
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" name="ForEach" testItemId="9" title="For Each: {Tokens}=&gt;Iteration">
+      <arguments>
+        <argument id="list">
+          <value class="variable">
+            <path element="Tokens"/>
+          </value>
+        </argument>
+        <argument id="fromItem"/>
+        <argument id="valueName">
+          <value class="value" valueClass="string">Iteration</value>
+        </argument>
+        <argument id="continueOnFailure">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="7">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.io.Write" name="Write" testItemId="8" title="Write: {Tokens}=&gt;">
+              <tags/>
+              <arguments>
+                <argument id="data">
+                  <value class="variable">
+                    <path element="Tokens"/>
+                  </value>
+                </argument>
+                <argument id="dataUrl">
+                  <value class="urlTarget" uri="excel:workbook.xlsx?worksheet=sheet1"/>
+                </argument>
+                <argument id="targetDescription"/>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+  </steps>
+  <tags/>
+</testCase>

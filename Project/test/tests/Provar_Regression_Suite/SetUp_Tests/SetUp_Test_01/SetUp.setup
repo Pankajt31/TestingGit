@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase>
+  <summary>&lt;span style="font-family: times new roman,times; font-size: small;"&gt;Valiadates the usage of Split test API &lt;/span&gt;</summary>
+  <remarks>&lt;span style="font-family: times new roman,times; font-size: small;"&gt;1.)Uses Split API (splits the string )&lt;/span&gt;</remarks>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Split" name="Split" testItemId="1" title="Split: templates/Var1.txt=&gt;,=&gt;Tokens">
+      <arguments>
+        <argument id="input">
+          <value class="template">templates/Var1.txt</value>
+        </argument>
+        <argument id="separator">
+          <value class="value" valueClass="string">,</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Tokens</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Folder</value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+  <tags/>
+</testCase>

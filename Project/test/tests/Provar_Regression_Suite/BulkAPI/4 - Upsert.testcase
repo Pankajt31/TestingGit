@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="26">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: demo (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">demo</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Sales</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Reopen</value>
+        </argument>
+        <argument id="vfDebug"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="environment"/>
+        <argument id="securityToken"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexBulk" name="ApexBulk" testItemId="2" title="Apex Bulk: upsert=&gt;Result">
+      <tags/>
+      <arguments>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">demo</value>
+        </argument>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Account</value>
+        </argument>
+        <argument id="operation">
+          <value class="value" valueClass="string">upsert</value>
+        </argument>
+        <argument id="externalIdFieldName">
+          <value class="value" valueClass="string">ExternalNumber__c</value>
+        </argument>
+        <argument id="assignmentRuleId">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="data">
+          <value class="variable">
+            <path element="ExcelData"/>
+          </value>
+        </argument>
+        <argument id="contentType">
+          <value class="value" valueClass="string">CSV</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">Result</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+      <parameterValueSources>
+        <parameterValueSource url="excel:templates/BulkAPI_Input.xlsx?worksheet=Upsert&amp;range=A1%3AB21&amp;namesLocation=FirstRowOfRange&amp;whereComparison=EqualTo" variableName="ExcelData" variableScope="Test">
+          <cacheToken>D:/Projects/TestProjects/TestOrg/Testing/templates/Book1.xlsx;1450096306717</cacheToken>
+          <cachedParameters>
+            <apiParam name="RowNumber"/>
+            <apiParam name="ExternalNumber__c"/>
+            <apiParam name="Name"/>
+          </cachedParameters>
+        </parameterValueSource>
+      </parameterValueSources>
+    </apiCall>
+  </steps>
+  <tags/>
+</testCase>

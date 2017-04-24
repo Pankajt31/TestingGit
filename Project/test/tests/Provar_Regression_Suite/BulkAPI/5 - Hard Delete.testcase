@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="10">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: demo (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Bank_RetailDepartment</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">demo</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Sales</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Reopen</value>
+        </argument>
+        <argument id="vfDebug"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="environment"/>
+        <argument id="privateBrowsingMode"/>
+        <argument id="securityToken"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="3" title="Fetch Ids that needs to be hard deleted and fill in the excel">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Fetch Ids that needs to be hard deleted and fill in the excel</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="4">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" name="ApexSoqlQuery" testItemId="5" title="SOQL Query: select Id from Account where Name like 'AccBulk%' limit 10=&gt;AccountRows">
+              <arguments>
+                <argument id="soqlQuery">
+                  <value class="value" valueClass="string">select Id from Account where Name like 'AccBulk%' limit 10</value>
+                </argument>
+                <argument id="apexConnectionName">
+                  <value class="value" valueClass="string">demo</value>
+                </argument>
+                <argument id="resultListName">
+                  <value class="value" valueClass="string">AccountRows</value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.io.Write" name="Write" testItemId="6" title="Write: {AccountRows}=&gt;excel:templates/BulkAPI_Input.xlsx?worksheet=Delete">
+              <arguments>
+                <argument id="data">
+                  <value class="variable">
+                    <path element="AccountRows"/>
+                  </value>
+                </argument>
+                <argument id="dataUrl">
+                  <value class="urlTarget" uri="excel:templates/BulkAPI_Input.xlsx?worksheet=Delete"/>
+                </argument>
+                <argument id="targetDescription">
+                  <value class="value" valueClass="string">excel:templates/BulkAPI_Input.xlsx?worksheet=Delete</value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexBulk" name="ApexBulk" testItemId="2" title="Apex Bulk: hardDelete=&gt;Result">
+      <tags/>
+      <arguments>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">demo</value>
+        </argument>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Account</value>
+        </argument>
+        <argument id="operation">
+          <value class="value" valueClass="string">hardDelete</value>
+        </argument>
+        <argument id="externalIdFieldName"/>
+        <argument id="assignmentRuleId">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="data">
+          <value class="url">{ExcelData}</value>
+        </argument>
+        <argument id="contentType">
+          <value class="value" valueClass="string">CSV</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">Result</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+      <parameterValueSources>
+        <parameterValueSource url="excel:templates/BulkAPI_Input.xlsx?worksheet=Delete&amp;range=A1%3AA11&amp;namesLocation=FirstRowOfRange&amp;whereComparison=EqualTo" variableName="ExcelData" variableScope="Test">
+          <cacheToken>D:/Projects/TestProjects/TestOrg/Testing/templates/Book1.xlsx;1450088939025</cacheToken>
+          <cachedParameters>
+            <apiParam name="RowNumber"/>
+            <apiParam name="Id"/>
+          </cachedParameters>
+        </parameterValueSource>
+      </parameterValueSources>
+    </apiCall>
+  </steps>
+  <tags/>
+</testCase>
