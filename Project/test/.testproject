@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testProject selectedBrowserConfigurationName="Full Screen" selectedEnvironment="Summer17">
+<testProject selectedBrowserConfigurationName="Full Screen" selectedEnvironment="Summer17" selectedWebBrowserType="Firefox">
   <title>/test/.testproject</title>
   <configPath>config</configPath>
   <testsPath>tests</testsPath>
