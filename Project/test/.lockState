@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<lockManagerState class="lockManagerState" leaseIdSeq="262">
+<lockManagerState class="lockManagerState" leaseIdSeq="264">
   <lockManagers>
-    <mananger guid="a6160646-8aea-4c6f-982f-f06c3a69b13e" ip="localhost" name="Provar" port="54724"/>
+    <mananger guid="91c52570-2513-4891-be59-645d5f598ed8" ip="localhost" name="Provar" port="65257"/>
   </lockManagers>
   <resourceMap>
     <entry>
       <key valueClass="string">testproject/validation</key>
       <value valueClass="list">
-        <lease granted="1493030046154" id="262" lockManagerId="a6160646-8aea-4c6f-982f-f06c3a69b13e" requestId="29592" requested="1493030046154" taskName="Validating Lead_changestatus.testcase" threadId="Worker-6" totalWork="382"/>
+        <lease granted="1494837894097" id="264" lockManagerId="91c52570-2513-4891-be59-645d5f598ed8" requestId="7480" requested="1494837894097" threadId="Worker-9" totalWork="383"/>
       </value>
     </entry>
   </resourceMap>
